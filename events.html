@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events | Christians in Seattle at UW</title>
+  <meta name="description" content="Upcoming and past student events for Christians in Seattle at UW.">
+  <meta property="og:title" content="Events | Christians in Seattle at UW">
+  <meta property="og:description" content="Bible reading, fellowship, welcome events, and student activities at UW.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="images/branding/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/site.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <header class="page-hero">
+      <div class="shell">
+        <p class="eyebrow">Campus community</p>
+        <h1 data-i18n="pages.eventsTitle">Events</h1>
+        <p data-i18n="pages.eventsIntro">Find upcoming student activities and review past events.</p>
+      </div>
+    </header>
+    <section class="section section-white">
+      <div class="shell">
+        <div class="section-heading"><h2 data-i18n="pages.upcoming">Upcoming Events</h2></div>
+        <div id="upcoming-events" class="schedule-grid" aria-live="polite"></div>
+      </div>
+    </section>
+    <section class="section section-accent">
+      <div class="shell">
+        <div class="section-heading"><h2 data-i18n="pages.past">Past Events</h2></div>
+        <div id="past-events" class="schedule-grid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module">
+    import { splitEvents, renderSchedule } from "./js/schedule.js";
+    import { getLanguage } from "./js/i18n.js";
+    function render() {
+      const groups = splitEvents();
+      renderSchedule(document.querySelector("#upcoming-events"), groups.upcoming);
+      const past = document.querySelector("#past-events");
+      if (groups.past.length) {
+        renderSchedule(past, groups.past);
+      } else {
+        past.innerHTML = `<p class="empty-state">${getLanguage() === "zh" ? "目前没有过往活动记录。" : "No past events are listed yet."}</p>`;
+      }
+    }
+    render();
+    window.addEventListener("languagechange", render);
+  </script>
+</body>
+</html>
