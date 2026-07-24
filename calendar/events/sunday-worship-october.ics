@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Christians in Seattle at UW//Fall 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sunday Worship on Campus
+X-WR-TIMEZONE:America/Los_Angeles
+BEGIN:VEVENT
+UID:sunday-worship-october-20261004@christiansinseattle.org
+DTSTAMP:20260724T170000Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Sunday Worship on Campus / 校园主日敬拜
+DESCRIPTION:Sunday Worship on Campus / 校园主日敬拜\nA time of worshi
+ p\, Bible reading\, and fellowship with students. / 与学生一同敬拜
+ 、阅读圣经并交通。\nTime to be confirmed / 时间待确认\nUW Se
+ attle campus - room to be confirmed / UW 西雅图校区 - 教室待确认
+ \nSource: UW Church Plan List\, page 1
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-sunday-worship
+ -october
+END:VEVENT
+END:VCALENDAR

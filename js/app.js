@@ -32,9 +32,9 @@ function renderNavigation() {
   target.innerHTML = `
     <header class="site-header">
       <div class="nav-shell">
-        <a class="brand" href="index.html" aria-label="${siteData.publicName}">
-          <span class="brand-mark" aria-hidden="true">CIS</span>
-          <span><strong>${getLanguage() === "zh" ? siteData.publicNameZh : siteData.publicName}</strong><small>${t("common.rso")}</small></span>
+        <a class="brand" href="index.html" aria-label="${siteData.organizationName}">
+          <img class="brand-logo" src="${siteData.logoImage}" alt="">
+          <span><strong>${getLanguage() === "zh" ? siteData.organizationNameZh : siteData.organizationName}</strong><small>${t("common.rso")}</small></span>
         </a>
         <button class="icon-button menu-button" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
           <span></span><span></span><span></span>
@@ -59,16 +59,16 @@ function renderFooter() {
   if (!target) return;
   const social = [
     externalLink(siteData.instagramUrl, t("common.instagram")),
-    externalLink(siteData.discordUrl, t("common.discord")),
+    externalLink(siteData.discordInviteUrl, t("common.discord")),
     externalLink(siteData.campusGroupsUrl, t("common.campusGroups")),
-    externalLink(siteData.churchWebsite, t("common.church")),
+    externalLink(siteData.churchWebsiteUrl, t("common.church")),
   ].filter(Boolean).join("");
 
   target.innerHTML = `
     <footer class="site-footer">
       <div class="footer-shell">
         <div>
-          <strong>${getLanguage() === "zh" ? siteData.publicNameZh : siteData.publicName}</strong>
+          <strong>${getLanguage() === "zh" ? siteData.organizationNameZh : siteData.organizationName}</strong>
           <p>${t("common.studentLed")}</p>
         </div>
         <nav class="footer-links" aria-label="Footer">${social}</nav>
@@ -92,7 +92,7 @@ function renderConfigLinks() {
 
 function renderConfiguredContent() {
   document.querySelectorAll("[data-public-name]").forEach((element) => {
-    element.textContent = getLanguage() === "zh" ? siteData.publicNameZh : siteData.publicName;
+    element.textContent = getLanguage() === "zh" ? siteData.organizationNameZh : siteData.organizationName;
   });
   document.querySelectorAll("[data-organization-type]").forEach((element) => {
     element.textContent = siteData.organizationType[getLanguage()];
@@ -110,6 +110,23 @@ function renderConfiguredContent() {
     }
     element.href = `mailto:${siteData.contactEmail}`;
     element.textContent = siteData.contactEmail;
+  });
+  document.querySelectorAll("[data-instagram-username]").forEach((element) => {
+    element.textContent = `@${siteData.instagramUsername}`;
+  });
+  document.querySelectorAll("[data-config-image]").forEach((element) => {
+    const source = siteData[element.dataset.configImage];
+    if (!source) {
+      element.hidden = true;
+      return;
+    }
+    element.src = source;
+  });
+  document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+    element.alt = t(element.dataset.i18nAlt);
+  });
+  document.querySelectorAll("[data-discord-unavailable]").forEach((element) => {
+    element.hidden = Boolean(siteData.discordInviteUrl);
   });
 }
 

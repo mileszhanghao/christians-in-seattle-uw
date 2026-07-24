@@ -1,14 +1,29 @@
 # Christians in Seattle at UW
 
-Static website for **Christians in Seattle at UW**, a student-led Registered Student Organization at the University of Washington.
+Static bilingual website for **Christians in Seattle at UW**, a student-led Registered Student Organization at the University of Washington.
 
-- Primary production domain: `https://christiansinseattle.org`
-- Future aliases: `www.christiansinseattle.org`, `christiansinseattle.com`, and `www.christiansinseattle.com`
+- Planned primary production domain: `https://christiansinseattle.org`
+- Protected secondary domain: `https://christiansinseattle.com`
 - Source code: GitHub under the `mileszhanghao` account
 - Hosting: Netlify
 - Domain registration and DNS: Squarespace Domains
 
-Squarespace manages the domain and DNS only. Netlify hosts the new static website. GitHub is the source of truth.
+Squarespace manages the domains and DNS. Netlify hosts the static website. GitHub is the source of truth.
+
+## Fall 2026 Sources
+
+The September-October schedule in this revision was audited against:
+
+1. `Christians in Seattle RSO Transition Guide.docx`
+2. `UW Church Plan List.pdf`
+
+The plan PDF is the authoritative source for event dates and the later follow-up on page 2 overrides earlier draft details. In particular:
+
+- September 30 uses the updated time of 5:30-7:30 p.m.
+- The HUB room remains unconfirmed because the document mentions both HUB 307 and HUB 337.
+- The October 2 Friday event is marked cancelled and is not included in calendar downloads.
+
+Do not publish a person's name, phone number, private email address, roster, signature, or internal planning material from either source document.
 
 ## Local Preview
 
@@ -18,147 +33,134 @@ From this directory:
 python -m http.server 4174
 ```
 
-Open `http://127.0.0.1:4174/`.
+Open `http://127.0.0.1:4174/`. Do not open the HTML files directly because JavaScript modules require a local server.
 
-Do not open the HTML files directly because JavaScript modules require a local server.
+## Shared Configuration
 
-## Project Structure
+Edit `data/site.js` for organization-wide information:
 
-```text
-.
-├── index.html
-├── about.html
-├── fall-schedule.html
-├── events.html
-├── bible-study.html
-├── new-students.html
-├── resources.html
-├── contact.html
-├── data/
-│   ├── site.js
-│   ├── events.js
-│   └── i18n.js
-├── js/
-│   ├── app.js
-│   ├── i18n.js
-│   └── schedule.js
-├── css/site.css
-├── calendar/fall-2026-orientation.ics
-└── images/
-    ├── branding/
-    ├── hero/
-    ├── events/
-    ├── gallery/
-    └── announcements/
+```js
+organizationName
+organizationNameZh
+instagramUsername
+instagramUrl
+instagramQrImage
+discordInviteUrl
+discordChannelUrl
+campusGroupsUrl
+churchWebsiteUrl
+contactEmail
+primaryDomain
+secondaryDomain
+lastUpdated
 ```
 
-## Updating Shared Information
+Leave an unconfirmed public link as an empty string. The site hides the corresponding button automatically. Never use a Discord channel URL as a public invite URL.
 
-Edit `data/site.js` to update:
+## Updating September-October Events
 
-- Instagram
-- Discord
-- Campus Groups
-- church website
-- public contact email
-- weekly time and location
-- last updated date
+Edit `data/events.js`. Each event records its public description, date, time, building, room, audience, source, publication status, cancellation status, and confirmation flags.
 
-Leave unconfirmed links and contact fields as empty strings. The website hides unavailable buttons automatically. Never add a private phone number or a student roster.
-
-## Adding or Confirming Events
-
-Edit `data/events.js`.
-
-Each event has:
+Use confirmation flags literally:
 
 ```js
 confirmed: {
   date: true,
   time: false,
+  building: false,
+  room: false,
   location: false,
 }
 ```
 
-When a time or room is confirmed:
+Do not fill a missing time, room, contact, or registration link by guessing. If an event is cancelled, set `cancelled: true`; cancelled events remain visible for clarity but do not receive calendar links.
 
-1. Add the bilingual `time` or `location` value.
-2. Change the matching `confirmed` value to `true`.
-3. Update `calendar/fall-2026-orientation.ics`.
-4. Update `lastUpdated` in `data/site.js`.
-5. Test both languages.
+After editing event data:
 
-Events that have ended move automatically from Upcoming Events to Past Events.
+1. Update `lastUpdated` in `data/site.js`.
+2. Regenerate all calendar files:
 
-## Calendar File
+   ```powershell
+   node scripts/generate-calendar.mjs
+   ```
 
-The `.ics` file supports Apple Calendar, Outlook, and other calendar applications. Every event must include:
+3. Check English and Chinese.
+4. Check the homepage and full schedule on desktop and mobile.
+5. Test the Google Calendar link, one individual `.ics`, and the combined `.ics`.
 
-- a stable `UID`
+## Calendar Rules
+
+`scripts/generate-calendar.mjs` creates:
+
+- one file per published event in `calendar/events/`
+- `calendar/fall-2026-orientation.ics` with all published, non-cancelled events
+
+Timed events use `America/Los_Angeles`. Events without a confirmed time temporarily use an all-day calendar entry, while the webpage and calendar description explicitly say the time is unconfirmed.
+
+Every event contains:
+
+- stable `UID`
 - `DTSTAMP`
-- `SUMMARY`
-- `DESCRIPTION`
+- `DTSTART`
+- `DTEND`
+- bilingual `SUMMARY` and `DESCRIPTION`
 - `LOCATION`
-- `DTSTART` and `DTEND`
+- `URL`
 
-Use all-day dates while a specific time is unconfirmed. After a time is confirmed, use a timezone-aware date-time in `America/Los_Angeles`.
+The generator escapes commas, semicolons, backslashes, and line breaks and folds long calendar lines.
+
+## Instagram
+
+Instagram is configured in `data/site.js`. The current public profile is:
+
+`https://www.instagram.com/christiansinseattleatuw`
+
+The QR image is `images/qr/instagram-uw.png`. Replace that file with the new official QR image when the account changes, keep the same square aspect ratio, and test it with a phone before publishing.
+
+The official logo is `images/branding/logo-cis-uw.jpg`, confirmed against the public Instagram profile.
+
+## Discord
+
+- `discordInviteUrl` is for prospective members and every **Join Discord** button.
+- `discordChannelUrl` is only for people who already joined the server and have channel permission.
+
+The previous invite `https://discord.gg/gWJFtXPt` was tested on July 24, 2026 and returned **Invite Invalid**. Until an administrator creates a new permanent, unlimited-use invite, keep `discordInviteUrl` empty. The website then shows “Discord invite being updated.”
 
 ## Images
 
-Use these directories:
+Use:
 
 ```text
 images/
   branding/
+  qr/
   hero/
   events/
   gallery/
   announcements/
+  social/
 ```
 
-Requirements:
+Use original, approved organization assets. Add useful alt text and optimize large files. Public Instagram posts can be content candidates, but photos with identifiable people still require publication approval. Do not use screenshots when an original file is available.
 
-- Use real, approved student-organization images.
-- Add useful alt text.
-- Do not fabricate event photos.
-- Optimize large images before committing.
-- Missing images are replaced by a neutral placeholder.
-
-The current selected images were copied from the existing public `christiansinseattle.org` site and still require final confirmation before production launch.
-
-## GitHub Workflow
+## GitHub and Netlify Workflow
 
 1. Create a branch from `main`.
-2. Make the content change.
-3. Preview locally.
-4. Open a Pull Request.
-5. Review links, both languages, mobile layout, and calendar data.
-6. Merge to `main` after approval.
+2. Make and test the content change.
+3. Open a Pull Request.
+4. Review the Netlify Deploy Preview.
+5. Verify all links, both languages, mobile layout, and calendar data.
+6. Merge to `main` only after approval.
 
-Netlify should deploy automatically after a change is merged to `main`. Deploy Previews should be enabled for Pull Requests.
-
-## Domain Migration
-
-Do not change Squarespace DNS until the Netlify preview has been approved.
-
-Before switching:
-
-1. Export or record every existing DNS record.
-2. Preserve all MX, TXT, verification, and email records.
-3. Add the Netlify custom domain.
-4. Change only the website records required by Netlify.
-5. Make `.org` the primary domain.
-6. Redirect `.com` and both `www` hosts to `.org`.
-7. Keep the old website online until DNS propagation and SSL are verified.
+Do not change Squarespace DNS until the Netlify preview has been approved. Preserve all existing MX, TXT, verification, and email records during any future domain migration.
 
 ## Security and Privacy
 
 Never commit:
 
 - student rosters
-- private phone numbers
-- private email addresses
-- login credentials
-- API tokens
+- private phone numbers or email addresses
+- private Discord messages or prayer requests
+- login credentials, passwords, or API tokens
 - domain transfer codes
 - old officer signatures or private constitution pages

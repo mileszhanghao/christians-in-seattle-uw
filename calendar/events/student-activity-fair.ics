@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Christians in Seattle at UW//Fall 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Student Activities Fair
+X-WR-TIMEZONE:America/Los_Angeles
+BEGIN:VEVENT
+UID:student-activity-fair-20260930@christiansinseattle.org
+DTSTAMP:20260724T170000Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261002
+SUMMARY:Student Activities Fair / 学生社团博览会
+DESCRIPTION:Student Activities Fair / 学生社团博览会\nMeet Christian
+ s in Seattle at UW during the fall Student Activities Fair. / 在秋季学
+ 生社团博览会与 Christians in Seattle at UW 见面。\nTime to be co
+ nfirmed / 时间待确认\nUW Seattle campus - room to be confirmed / UW
+  西雅图校区 - 教室待确认\nSource: UW Church Plan List\, page 1
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-student-activi
+ ty-fair
+END:VEVENT
+END:VCALENDAR

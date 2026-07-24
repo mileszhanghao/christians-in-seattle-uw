@@ -1,70 +1,105 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Christians in Seattle at UW//Fall 2026 Orientation//EN
+PRODID:-//Christians in Seattle at UW//Fall 2026//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Christians in Seattle at UW - Fall 2026
+X-WR-TIMEZONE:America/Los_Angeles
 BEGIN:VEVENT
 UID:gospel-preaching-on-campus-20260924@christiansinseattle.org
-DTSTAMP:20260723T040000Z
+DTSTAMP:20260724T170000Z
 DTSTART;VALUE=DATE:20260924
 DTEND;VALUE=DATE:20261005
-SUMMARY:Gospel Preaching on Campus
-DESCRIPTION:Fall quarter campus gospel outreach. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+SUMMARY:Gospel Preaching on Campus / 校园福音传扬
+DESCRIPTION:Gospel Preaching on Campus / 校园福音传扬\nMeet students
+  across campus and share the good news of Jesus Christ. / 在校园里认
+ 识同学，并分享耶稣基督的福音。\nTime to be confirmed / 时
+ 间待确认\nUW Seattle campus - room to be confirmed / UW 西雅图校
+ 区 - 教室待确认\nSource: UW Church Plan List\, page 1
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-gospel-preachi
+ ng-on-campus
 END:VEVENT
 BEGIN:VEVENT
-UID:mid-dawg-days-welcome-20260925@christiansinseattle.org
-DTSTAMP:20260723T040000Z
+UID:new-students-welcome-20260925@christiansinseattle.org
+DTSTAMP:20260724T170000Z
 DTSTART;VALUE=DATE:20260925
 DTEND;VALUE=DATE:20260926
-SUMMARY:Mid-Dawg Days: New Students Welcoming
-DESCRIPTION:A welcome event for new UW students. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+SUMMARY:New Students Welcome Event / 新生欢迎活动
+DESCRIPTION:New Students Welcome Event / 新生欢迎活动\nA welcoming op
+ portunity for new UW students to meet friends and connect with the student
+  community. / 欢迎 UW 新生认识朋友，并与学生团体建立联
+ 系。\nTime to be confirmed / 时间待确认\nUW Seattle campus - room t
+ o be confirmed / UW 西雅图校区 - 教室待确认\nSource: UW Church P
+ lan List\, page 1
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-new-students-w
+ elcome
 END:VEVENT
 BEGIN:VEVENT
 UID:sunday-worship-september-20260927@christiansinseattle.org
-DTSTAMP:20260723T040000Z
+DTSTAMP:20260724T170000Z
 DTSTART;VALUE=DATE:20260927
 DTEND;VALUE=DATE:20260928
-SUMMARY:Sunday Worship on Campus
-DESCRIPTION:Worship\, Bible reading\, and fellowship. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+SUMMARY:Sunday Worship on Campus / 校园主日敬拜
+DESCRIPTION:Sunday Worship on Campus / 校园主日敬拜\nA time of worshi
+ p\, Bible reading\, and fellowship with students. / 与学生一同敬拜
+ 、阅读圣经并交通。\nTime to be confirmed / 时间待确认\nUW Se
+ attle campus - room to be confirmed / UW 西雅图校区 - 教室待确认
+ \nSource: UW Church Plan List\, page 1
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-sunday-worship
+ -september
 END:VEVENT
 BEGIN:VEVENT
 UID:student-activity-fair-20260930@christiansinseattle.org
-DTSTAMP:20260723T040000Z
+DTSTAMP:20260724T170000Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261002
-SUMMARY:Student Activity Fair
-DESCRIPTION:Meet Christians in Seattle at UW. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+SUMMARY:Student Activities Fair / 学生社团博览会
+DESCRIPTION:Student Activities Fair / 学生社团博览会\nMeet Christian
+ s in Seattle at UW during the fall Student Activities Fair. / 在秋季学
+ 生社团博览会与 Christians in Seattle at UW 见面。\nTime to be co
+ nfirmed / 时间待确认\nUW Seattle campus - room to be confirmed / UW
+  西雅图校区 - 教室待确认\nSource: UW Church Plan List\, page 1
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-student-activi
+ ty-fair
 END:VEVENT
 BEGIN:VEVENT
-UID:first-day-welcome-20260930@christiansinseattle.org
-DTSTAMP:20260723T040000Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:First Day of School: New Student Welcoming
-DESCRIPTION:Connect with students on the first day of fall quarter. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
-END:VEVENT
-BEGIN:VEVENT
-UID:new-student-kickoff-20261002@christiansinseattle.org
-DTSTAMP:20260723T040000Z
-DTSTART;VALUE=DATE:20261002
-DTEND;VALUE=DATE:20261003
-SUMMARY:First Friday: New Student Kickoff
-DESCRIPTION:A fall quarter kickoff for new students and friends. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+UID:fall-kickoff-20260930@christiansinseattle.org
+DTSTAMP:20260724T170000Z
+DTSTART;TZID=America/Los_Angeles:20260930T173000
+DTEND;TZID=America/Los_Angeles:20260930T193000
+SUMMARY:Fall Quarter Kickoff / 秋季学期启动活动
+DESCRIPTION:Fall Quarter Kickoff / 秋季学期启动活动\nA fall-quarter
+  welcome gathering for new students and friends. The room is still being c
+ onfirmed. / 面向新生和朋友的秋季学期欢迎聚会，具体教
+ 室仍在确认中。\n5:30–7:30 p.m. / 下午 5:30–7:30\nHusky Union
+  Building (HUB) - room to be confirmed / Husky Union Building（HUB） -
+  教室待确认\nSource: UW Church Plan List\, page 2 follow-up email
+LOCATION:Husky Union Building (HUB) - room to be confirmed / Husky Union Bu
+ ilding（HUB） - 教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-fall-kickoff
 END:VEVENT
 BEGIN:VEVENT
 UID:sunday-worship-october-20261004@christiansinseattle.org
-DTSTAMP:20260723T040000Z
+DTSTAMP:20260724T170000Z
 DTSTART;VALUE=DATE:20261004
 DTEND;VALUE=DATE:20261005
-SUMMARY:Sunday Worship on Campus
-DESCRIPTION:Worship\, Bible reading\, and fellowship. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+SUMMARY:Sunday Worship on Campus / 校园主日敬拜
+DESCRIPTION:Sunday Worship on Campus / 校园主日敬拜\nA time of worshi
+ p\, Bible reading\, and fellowship with students. / 与学生一同敬拜
+ 、阅读圣经并交通。\nTime to be confirmed / 时间待确认\nUW Se
+ attle campus - room to be confirmed / UW 西雅图校区 - 教室待确认
+ \nSource: UW Church Plan List\, page 1
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-sunday-worship
+ -october
 END:VEVENT
 END:VCALENDAR
