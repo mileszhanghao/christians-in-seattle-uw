@@ -1,18 +1,18 @@
 :root {
-  --ink: #17211d;
-  --muted: #5f6d66;
-  --paper: #f7f8f5;
+  --ink: #2c2434;
+  --muted: #696171;
+  --paper: #f8f5f8;
   --white: #ffffff;
-  --evergreen: #12372a;
-  --evergreen-2: #1f5843;
-  --gold: #f4c95d;
-  --gold-dark: #7a5a05;
-  --sky: #2f6f8f;
-  --rose: #9a3f4c;
-  --violet: #5b3f95;
-  --blue: #3378c6;
-  --line: #dbe2dd;
-  --shadow: 0 12px 28px rgba(16, 45, 34, 0.11);
+  --evergreen: #4b2e83;
+  --evergreen-2: #2d1b4e;
+  --gold: #e8c547;
+  --gold-dark: #6a5600;
+  --sky: #3f7cac;
+  --rose: #c85a86;
+  --violet: #4b2e83;
+  --blue: #356f9f;
+  --line: #ded8e5;
+  --shadow: 0 12px 28px rgba(45, 27, 78, 0.13);
 }
 
 * {
@@ -200,8 +200,8 @@ a {
   align-items: center;
   color: var(--white);
   background-color: var(--evergreen);
-  background-image: url("../images/hero/uw-campus-fellowship.jpeg");
-  background-position: center;
+  background-image: url("../images/hero/uw-cherry-blossoms.png");
+  background-position: center 48%;
   background-size: cover;
   overflow: hidden;
 }
@@ -210,7 +210,7 @@ a {
   position: absolute;
   inset: 0;
   content: "";
-  background: rgba(8, 34, 25, 0.78);
+  background: rgba(33, 18, 57, 0.64);
 }
 
 .hero-shell {
@@ -354,11 +354,11 @@ a {
 }
 
 .section-accent {
-  background: #e8f0ec;
+  background: #f1e8f1;
 }
 
 .section-rose {
-  background: #f6e9eb;
+  background: #fbeef3;
 }
 
 .shell {
@@ -749,6 +749,85 @@ a {
   gap: 48px;
 }
 
+.social-preview {
+  position: relative;
+  display: inline-flex;
+  min-width: 0;
+}
+
+.social-preview > .button {
+  width: 100%;
+}
+
+.social-preview-card {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  z-index: 40;
+  width: min(320px, calc(100vw - 32px));
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 12px;
+  visibility: hidden;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--ink);
+  background: var(--white);
+  box-shadow: 0 20px 44px rgba(24, 14, 42, 0.24);
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+
+.social-preview:hover .social-preview-card,
+.social-preview:focus-within .social-preview-card {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.social-preview-card > img {
+  width: 88px;
+  height: 88px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.social-preview-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.social-preview-copy strong,
+.social-preview-copy small,
+.social-preview-copy a {
+  display: block;
+}
+
+.social-preview-copy strong {
+  color: var(--evergreen);
+  font-size: 0.92rem;
+}
+
+.social-preview-copy small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.social-preview-copy a {
+  width: fit-content;
+  margin-top: 8px;
+  color: var(--violet);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
 .social-qr-layout h2 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
@@ -838,7 +917,7 @@ a {
 .site-footer {
   padding: 44px 0;
   color: rgba(255, 255, 255, 0.74);
-  background: #0d261d;
+  background: #24133d;
 }
 
 .footer-shell {
@@ -962,6 +1041,21 @@ a {
     padding-left: 10px;
     font-size: 0.88rem;
     text-align: center;
+  }
+
+  .social-preview {
+    width: 100%;
+  }
+
+  .social-preview-card {
+    right: auto;
+    left: 0;
+    transform: translateY(8px);
+  }
+
+  .social-preview:hover .social-preview-card,
+  .social-preview:focus-within .social-preview-card {
+    transform: translateY(0);
   }
 
   .hero-signal {

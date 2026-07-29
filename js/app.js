@@ -90,6 +90,59 @@ function renderConfigLinks() {
   });
 }
 
+function renderGoogleCalendarLinks() {
+  const calendarUrl = new URL("calendar/fall-2026-orientation.ics", document.baseURI).href;
+  const googleUrl = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(calendarUrl)}`;
+  document.querySelectorAll("[data-google-calendar-all]").forEach((element) => {
+    element.href = googleUrl;
+    element.target = "_blank";
+    element.rel = "noopener noreferrer";
+  });
+}
+
+function renderSocialPreviews() {
+  document.querySelectorAll("a[data-social-preview]").forEach((link, index) => {
+    const type = link.dataset.socialPreview;
+    let wrapper = link.closest(".social-preview");
+    if (!wrapper) {
+      wrapper = document.createElement("span");
+      wrapper.className = "social-preview";
+      link.before(wrapper);
+      wrapper.append(link);
+    }
+
+    let card = wrapper.querySelector(".social-preview-card");
+    if (!card) {
+      card = document.createElement("span");
+      card.className = "social-preview-card";
+      card.setAttribute("role", "tooltip");
+      wrapper.append(card);
+    }
+
+    const cardId = `social-preview-${type}-${index}`;
+    card.id = cardId;
+    link.setAttribute("aria-describedby", cardId);
+    const isChinese = getLanguage() === "zh";
+
+    if (type === "discord") {
+      card.innerHTML = `
+        <img src="${siteData.socialCommunityImage}" alt="">
+        <span class="social-preview-copy">
+          <strong>Christians in Seattle UW</strong>
+          <small>${isChinese ? "活动通知、问题、经文与校园交通" : "Events, questions, Bible verses, and campus fellowship"}</small>
+          <a href="${siteData.discordChannelUrl}" target="_blank" rel="noopener noreferrer">${isChinese ? "预览 #general" : "Preview #general"} &rarr;</a>
+        </span>`;
+    } else {
+      card.innerHTML = `
+        <img src="${siteData.instagramPreviewImage}" alt="">
+        <span class="social-preview-copy">
+          <strong>@${siteData.instagramUsername}</strong>
+          <small>${isChinese ? "查看最新活动、校园照片与经文分享" : "Recent events, campus photos, and Bible verse posts"}</small>
+        </span>`;
+    }
+  });
+}
+
 function renderConfiguredContent() {
   document.querySelectorAll("[data-public-name]").forEach((element) => {
     element.textContent = getLanguage() === "zh" ? siteData.organizationNameZh : siteData.organizationName;
@@ -147,7 +200,9 @@ function renderShared() {
   renderNavigation();
   renderFooter();
   renderConfigLinks();
+  renderGoogleCalendarLinks();
   renderConfiguredContent();
+  renderSocialPreviews();
   installImageFallbacks();
 }
 

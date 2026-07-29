@@ -9,10 +9,12 @@ export const siteData = {
   instagramUrl: "https://www.instagram.com/christiansinseattleatuw",
   instagramQrImage: "images/qr/instagram-uw.png",
   logoImage: "images/branding/logo-cis-uw.jpg",
-  discordInviteUrl: "",
+  socialCommunityImage: "images/social/community-fellowship.jpg",
+  instagramPreviewImage: "images/social/instagram-verse.jpg",
+  discordInviteUrl: "https://discord.gg/KaU6RJ3ZWE",
   discordChannelUrl: "https://discord.com/channels/1416897268094865440/1416897268996378818",
   campusGroupsUrl: "",
-  churchWebsiteUrl: "",
+  churchWebsiteUrl: "https://tcots-website-preview.netlify.app",
   contactEmail: "",
   weeklyTime: {
     en: "Time to be confirmed",
@@ -26,5 +28,5 @@ export const siteData = {
   },
   primaryDomain: "christiansinseattle.org",
   secondaryDomain: "christiansinseattle.com",
-  lastUpdated: "2026-07-24",
+  lastUpdated: "2026-07-29",
 };

@@ -1,10 +1,10 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readdir, unlink, writeFile } from "node:fs/promises";
 import { fallOrientationEvents } from "../data/events.js";
 import { siteData } from "../data/site.js";
 
 const outputDirectory = new URL("../calendar/events/", import.meta.url);
 const combinedFile = new URL("../calendar/fall-2026-orientation.ics", import.meta.url);
-const dtstamp = "20260724T170000Z";
+const dtstamp = "20260729T200000Z";
 
 function escapeIcs(value) {
   return String(value ?? "")
@@ -49,7 +49,7 @@ function addDays(value, count) {
 }
 
 function timeText(event) {
-  if (!event.confirmed.time) return "Time to be confirmed / 时间待确认";
+  if (!event.time?.en) return "Time to be confirmed / 时间待确认";
   return `${event.time.en} / ${event.time.zh}`;
 }
 
@@ -67,8 +67,8 @@ function eventLines(event) {
     `${event.description.en} / ${event.description.zh}`,
     timeText(event),
     locationText(event),
-    `Source: ${event.source}`,
-  ].join("\n");
+    event.capacity ? `Capacity: ${event.capacity.en} / 容量：${event.capacity.zh}` : "",
+  ].filter(Boolean).join("\n");
   const url = `https://${siteData.primaryDomain}/fall-schedule.html#event-${event.id}`;
   const lines = [
     "BEGIN:VEVENT",
@@ -76,7 +76,7 @@ function eventLines(event) {
     `DTSTAMP:${dtstamp}`,
   ];
 
-  if (event.confirmed.time && event.startTime && event.endTime) {
+  if (event.startTime && event.endTime) {
     lines.push(
       `DTSTART;TZID=America/Los_Angeles:${compactDateTime(event.date, event.startTime)}`,
       `DTEND;TZID=America/Los_Angeles:${compactDateTime(event.date, event.endTime)}`,
@@ -116,6 +116,13 @@ function calendar(events, name) {
 const publishedEvents = fallOrientationEvents.filter((event) => event.public && !event.cancelled);
 
 await mkdir(outputDirectory, { recursive: true });
+const expectedFiles = new Set(publishedEvents.map((event) => `${event.id}.ics`));
+const existingFiles = await readdir(outputDirectory);
+await Promise.all(
+  existingFiles
+    .filter((filename) => filename.endsWith(".ics") && !expectedFiles.has(filename))
+    .map((filename) => unlink(new URL(filename, outputDirectory))),
+);
 await Promise.all(
   publishedEvents.map((event) =>
     writeFile(new URL(`${event.id}.ics`, outputDirectory), calendar([event], event.title.en), "utf8"),

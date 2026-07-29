@@ -17,11 +17,15 @@ The September-October schedule in this revision was audited against:
 1. `Christians in Seattle RSO Transition Guide.docx`
 2. `UW Church Plan List.pdf`
 
-The plan PDF is the authoritative source for event dates and the later follow-up on page 2 overrides earlier draft details. In particular:
+The plan PDF is the source for event dates, with the later planning discussion overriding earlier draft details. The current public schedule is:
 
-- September 30 uses the updated time of 5:30-7:30 p.m.
-- The HUB room remains unconfirmed because the document mentions both HUB 307 and HUB 337.
-- The October 2 Friday event is marked cancelled and is not included in calendar downloads.
+- September 25, 5:30-7:30 p.m.: New Students Welcome; room to be confirmed; capacity of 70+ requested.
+- September 27, tentatively 10 a.m.-2 p.m.: Sunday Worship on Campus; academic room to be confirmed.
+- September 30, 5:30-7:30 p.m.: Fall Quarter Kickoff in HUB 337; capacity 70.
+- October 2, 5:30-7:30 p.m.: Topic-Based Discussion in HUB 340; capacity 70.
+- October 4, tentatively 10 a.m.-2 p.m.: Sunday Worship on Campus; academic room to be confirmed.
+
+The October 2 event is active. Do not mark it cancelled.
 
 Do not publish a person's name, phone number, private email address, roster, signature, or internal planning material from either source document.
 
@@ -86,7 +90,7 @@ After editing event data:
 
 3. Check English and Chinese.
 4. Check the homepage and full schedule on desktop and mobile.
-5. Test the Google Calendar link, one individual `.ics`, and the combined `.ics`.
+5. Test the individual and combined Google Calendar links.
 
 ## Calendar Rules
 
@@ -95,7 +99,7 @@ After editing event data:
 - one file per published event in `calendar/events/`
 - `calendar/fall-2026-orientation.ics` with all published, non-cancelled events
 
-Timed events use `America/Los_Angeles`. Events without a confirmed time temporarily use an all-day calendar entry, while the webpage and calendar description explicitly say the time is unconfirmed.
+Timed events use `America/Los_Angeles`. A tentative time is still represented as a timed event and is clearly labeled "to be confirmed" on the website and in the calendar description.
 
 Every event contains:
 
@@ -124,7 +128,7 @@ The official logo is `images/branding/logo-cis-uw.jpg`, confirmed against the pu
 - `discordInviteUrl` is for prospective members and every **Join Discord** button.
 - `discordChannelUrl` is only for people who already joined the server and have channel permission.
 
-The previous invite `https://discord.gg/gWJFtXPt` was tested on July 24, 2026 and returned **Invite Invalid**. Until an administrator creates a new permanent, unlimited-use invite, keep `discordInviteUrl` empty. The website then shows “Discord invite being updated.”
+The current permanent invite is `https://discord.gg/KaU6RJ3ZWE`. Keep `discordInviteUrl` set to this invite and reserve `discordChannelUrl` for the existing-member `#general` channel.
 
 ## Images
 

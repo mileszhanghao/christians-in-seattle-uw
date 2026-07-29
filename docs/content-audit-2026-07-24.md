@@ -25,7 +25,6 @@ Audit date: July 24, 2026
 
 | Event | Confirmed | Still unconfirmed |
 | --- | --- | --- |
-| Gospel Preaching on Campus | September 24-October 4 | Time, meeting point, registration |
 | New Students Welcome | September 25 | Time, building, room, registration |
 | Sunday Worship | September 27 | Time, building, room, public confirmation |
 | Student Activities Fair | September 30 or October 1 | Exact date, time, booth location |
@@ -44,9 +43,10 @@ Audit date: July 24, 2026
 - Student Activities Fair date/location: the plan says September 30 or October 1 and mentions Red Square or HUB.
 - Sunday worship time: “possibly 10-2” is planning language, not a confirmed public time.
 
-## E. Cancelled or Not Upcoming
+## E. Current Follow-up Decisions
 
-- The October 2 Friday topic discussion was removed in the latest follow-up. It is shown as cancelled and excluded from all calendar downloads.
+- The broad September 24-October 4 gospel preaching entry and the separate Student Activity Fair entry are not published as standalone events.
+- The October 2 topic-based discussion remains active at 5:30-7:30 p.m. in HUB 340.
 - The public Instagram spring schedule (April-June 2026) is reference material only and is not shown as an upcoming fall schedule.
 
 ## Public Content Candidates
@@ -75,9 +75,9 @@ Audit date: July 24, 2026
 - Old officer contact information or signatures.
 - Spring 2026 schedule presented as if it were the current fall schedule.
 
-## Invalid or Unconfirmed Links
+## Confirmed Community Link
 
-- `https://discord.gg/gWJFtXPt`: invalid when tested July 24, 2026.
+- Permanent Discord invite: `https://discord.gg/KaU6RJ3ZWE`
 - `discordChannelUrl`: valid only for existing members; it is not a public invite.
 - Campus Groups/HuskyLink: not published until the post-migration public organization URL is confirmed.
 - Church website: not published until the organization confirms the correct public church URL.

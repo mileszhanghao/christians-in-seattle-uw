@@ -7,18 +7,15 @@ X-WR-CALNAME:Fall Quarter Kickoff
 X-WR-TIMEZONE:America/Los_Angeles
 BEGIN:VEVENT
 UID:fall-kickoff-20260930@christiansinseattle.org
-DTSTAMP:20260724T170000Z
+DTSTAMP:20260729T200000Z
 DTSTART;TZID=America/Los_Angeles:20260930T173000
 DTEND;TZID=America/Los_Angeles:20260930T193000
 SUMMARY:Fall Quarter Kickoff / 秋季学期启动活动
 DESCRIPTION:Fall Quarter Kickoff / 秋季学期启动活动\nA fall-quarter
-  welcome gathering for new students and friends. The room is still being c
- onfirmed. / 面向新生和朋友的秋季学期欢迎聚会，具体教
- 室仍在确认中。\n5:30–7:30 p.m. / 下午 5:30–7:30\nHusky Union
-  Building (HUB) - room to be confirmed / Husky Union Building（HUB） -
-  教室待确认\nSource: UW Church Plan List\, page 2 follow-up email
-LOCATION:Husky Union Building (HUB) - room to be confirmed / Husky Union Bu
- ilding（HUB） - 教室待确认
+  welcome gathering for new students and friends. / 面向新生和朋友
+ 的秋季学期欢迎聚会。\n5:30–7:30 p.m. / 下午 5:30–7:30\nHUB
+  337 / HUB 337\nCapacity: 70 people / 容量：70 人
+LOCATION:HUB 337 / HUB 337
 URL:https://christiansinseattle.org/fall-schedule.html#event-fall-kickoff
 END:VEVENT
 END:VCALENDAR

@@ -32,7 +32,7 @@ function formatDate(event) {
 }
 
 function timeLabel(event) {
-  return event.confirmed.time && event.startTime ? localized(event.time) : t("common.timeTbc");
+  return event.time && localized(event.time) ? localized(event.time) : t("common.timeTbc");
 }
 
 function locationLabel(event) {
@@ -69,7 +69,7 @@ function statusBadges(event) {
 }
 
 function bilingualDescription(event) {
-  const time = event.confirmed.time
+  const time = event.time && event.time.en
     ? `${event.time.en} / ${event.time.zh}`
     : "Time to be confirmed / 时间待确认";
   const location = event.confirmed.location
@@ -82,13 +82,14 @@ function bilingualDescription(event) {
     `${event.description.en} / ${event.description.zh}`,
     time,
     location,
+    event.capacity ? `Capacity: ${event.capacity.en} / \u5bb9\u91cf\uff1a${event.capacity.zh}` : "",
     "Please check Instagram for the latest updates. / 请关注 Instagram 获取最新安排。",
-  ];
+  ].filter(Boolean);
   return lines.join("\n");
 }
 
 function googleCalendarUrl(event) {
-  const dates = event.confirmed.time && event.startTime && event.endTime
+  const dates = event.startTime && event.endTime
     ? `${compactDateTime(event.date, event.startTime)}/${compactDateTime(event.date, event.endTime)}`
     : `${compactDate(event.date)}/${compactDate(addDays(event.endDate || event.date, 1))}`;
   const params = new URLSearchParams({
@@ -108,7 +109,6 @@ function calendarActions(event) {
   return `
     <div class="calendar-actions">
       <a class="calendar-link" href="${googleCalendarUrl(event)}" target="_blank" rel="noopener noreferrer">${t("common.addGoogle")}</a>
-      <a class="calendar-link" href="calendar/events/${event.id}.ics" download>${t("common.downloadIcs")}</a>
     </div>`;
 }
 
@@ -125,6 +125,7 @@ export function eventCard(event, options = {}) {
       <dl class="event-details">
         <div><dt>${t("common.time")}</dt><dd>${event.cancelled ? t("status.cancelled") : timeLabel(event)}</dd></div>
         <div><dt>${t("common.location")}</dt><dd>${event.cancelled ? t("common.notApplicable") : locationLabel(event)}</dd></div>
+        ${event.capacity ? `<div><dt>${t("common.capacity")}</dt><dd>${localized(event.capacity)}</dd></div>` : ""}
         <div><dt>${t("common.audience")}</dt><dd>${localized(event.audience)}</dd></div>
       </dl>
       ${calendarActions(event)}

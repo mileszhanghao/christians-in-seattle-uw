@@ -7,16 +7,16 @@ X-WR-CALNAME:New Students Welcome Event
 X-WR-TIMEZONE:America/Los_Angeles
 BEGIN:VEVENT
 UID:new-students-welcome-20260925@christiansinseattle.org
-DTSTAMP:20260724T170000Z
-DTSTART;VALUE=DATE:20260925
-DTEND;VALUE=DATE:20260926
+DTSTAMP:20260729T200000Z
+DTSTART;TZID=America/Los_Angeles:20260925T173000
+DTEND;TZID=America/Los_Angeles:20260925T193000
 SUMMARY:New Students Welcome Event / 新生欢迎活动
-DESCRIPTION:New Students Welcome Event / 新生欢迎活动\nA welcoming op
- portunity for new UW students to meet friends and connect with the student
-  community. / 欢迎 UW 新生认识朋友，并与学生团体建立联
- 系。\nTime to be confirmed / 时间待确认\nUW Seattle campus - room t
- o be confirmed / UW 西雅图校区 - 教室待确认\nSource: UW Church P
- lan List\, page 1
+DESCRIPTION:New Students Welcome Event / 新生欢迎活动\nMeet new UW st
+ udents\, make friends\, and connect with the campus community. / 欢迎 UW
+  新生认识朋友，并与校园学生团体建立联系。\n5:30–7:30
+  p.m. / 下午 5:30–7:30\nUW Seattle campus - room to be confirmed / UW
+  西雅图校区 - 教室待确认\nCapacity: 70+ requested / 容量：申
+ 请 70+ 人
 LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
   教室待确认
 URL:https://christiansinseattle.org/fall-schedule.html#event-new-students-w
