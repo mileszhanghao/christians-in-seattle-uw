@@ -1,5 +1,8 @@
 import { fallOrientationEvents } from "../data/events.js";
+import { siteData } from "../data/site.js";
 import { getLanguage, localized, t } from "./i18n.js";
+
+const timezone = "America/Los_Angeles";
 
 function parseDate(value) {
   return new Date(`${value}T00:00:00`);
@@ -15,6 +18,10 @@ function compactDate(value) {
   return value.replaceAll("-", "");
 }
 
+function compactDateTime(date, time) {
+  return `${compactDate(date)}T${time.replace(":", "")}00`;
+}
+
 function formatDate(event) {
   const locale = getLanguage() === "zh" ? "zh-CN" : "en-US";
   const options = { weekday: "short", month: "short", day: "numeric" };
@@ -25,52 +32,133 @@ function formatDate(event) {
 }
 
 function timeLabel(event) {
-  return event.confirmed.time && event.time ? localized(event.time) : t("common.timeTbc");
+  return event.time && localized(event.time) ? localized(event.time) : t("common.timeTbc");
 }
 
 function locationLabel(event) {
-  return event.confirmed.location && event.location ? localized(event.location) : t("common.locationTbc");
+  if (event.confirmed.location && event.location) return localized(event.location);
+  if (event.confirmed.building && event.building) {
+    return `${localized(event.building)} — ${t("common.roomTbc")}`;
+  }
+  return t("common.locationTbc");
+}
+
+function hasUnconfirmedDetails(event) {
+  return !event.confirmed.date || !event.confirmed.time || !event.confirmed.location;
+}
+
+function temporalStatus(event) {
+  if (event.cancelled) return "cancelled";
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const start = parseDate(event.date);
+  const end = parseDate(event.endDate || event.date);
+  if (today >= start && today <= end) return "today";
+  return end < today ? "past" : "upcoming";
+}
+
+function statusBadges(event) {
+  const status = temporalStatus(event);
+  if (status === "cancelled") {
+    return `<span class="status-badge status-cancelled">${t("status.cancelled")}</span>`;
+  }
+  const confirmation = hasUnconfirmedDetails(event)
+    ? `<span class="status-badge status-tbc">${t("status.tbc")}</span>`
+    : "";
+  return `<span class="status-badge status-${status}">${t(`status.${status}`)}</span>${confirmation}`;
+}
+
+function bilingualDescription(event) {
+  const time = event.time && event.time.en
+    ? `${event.time.en} / ${event.time.zh}`
+    : "Time to be confirmed / 时间待确认";
+  const location = event.confirmed.location
+    ? `${event.location.en} / ${event.location.zh}`
+    : event.confirmed.building
+      ? `${event.building.en} — room to be confirmed / ${event.building.zh} — 教室待确认`
+      : "UW Seattle campus — room to be confirmed / UW 西雅图校区 — 教室待确认";
+  const lines = [
+    `${event.title.en} / ${event.title.zh}`,
+    `${event.description.en} / ${event.description.zh}`,
+    time,
+    location,
+    event.capacity ? `Capacity: ${event.capacity.en} / \u5bb9\u91cf\uff1a${event.capacity.zh}` : "",
+    "Please check Instagram for the latest updates. / 请关注 Instagram 获取最新安排。",
+  ].filter(Boolean);
+  return lines.join("\n");
 }
 
 function googleCalendarUrl(event) {
-  const end = addDays(event.endDate || event.date, 1);
+  const dates = event.startTime && event.endTime
+    ? `${compactDateTime(event.date, event.startTime)}/${compactDateTime(event.date, event.endTime)}`
+    : `${compactDate(event.date)}/${compactDate(addDays(event.endDate || event.date, 1))}`;
   const params = new URLSearchParams({
     action: "TEMPLATE",
     text: localized(event.title),
-    dates: `${compactDate(event.date)}/${compactDate(end)}`,
-    details: `${localized(event.description)} ${timeLabel(event)}`,
+    dates,
+    ctz: timezone,
+    details: bilingualDescription(event),
     location: locationLabel(event),
+    sprop: `website:https://${siteData.primaryDomain}/fall-schedule.html`,
   });
-  return `https://calendar.google.com/calendar/render?${params}`;
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
 
-export function eventCard(event) {
+function calendarActions(event) {
+  if (event.cancelled) return "";
   return `
-    <article class="event-card">
-      <p class="event-date">${formatDate(event)}</p>
+    <div class="calendar-actions">
+      <a class="calendar-link" href="${googleCalendarUrl(event)}" target="_blank" rel="noopener noreferrer">${t("common.addGoogle")}</a>
+    </div>`;
+}
+
+export function eventCard(event, options = {}) {
+  const nearestClass = options.isNext ? " is-next" : "";
+  return `
+    <article id="event-${event.id}" class="event-card${nearestClass}">
+      <div class="event-card-top">
+        <p class="event-date">${formatDate(event)}</p>
+        <div class="status-row">${statusBadges(event)}</div>
+      </div>
       <h3>${localized(event.title)}</h3>
       <p>${localized(event.description)}</p>
       <dl class="event-details">
-        <div><dt>${getLanguage() === "zh" ? "时间" : "Time"}</dt><dd>${timeLabel(event)}</dd></div>
-        <div><dt>${getLanguage() === "zh" ? "地点" : "Location"}</dt><dd>${locationLabel(event)}</dd></div>
+        <div><dt>${t("common.time")}</dt><dd>${event.cancelled ? t("status.cancelled") : timeLabel(event)}</dd></div>
+        <div><dt>${t("common.location")}</dt><dd>${event.cancelled ? t("common.notApplicable") : locationLabel(event)}</dd></div>
+        ${event.capacity ? `<div><dt>${t("common.capacity")}</dt><dd>${localized(event.capacity)}</dd></div>` : ""}
+        <div><dt>${t("common.audience")}</dt><dd>${localized(event.audience)}</dd></div>
       </dl>
-      <a class="calendar-link" href="${googleCalendarUrl(event)}" target="_blank" rel="noopener noreferrer">${t("common.addGoogle")}</a>
+      ${calendarActions(event)}
     </article>`;
+}
+
+function nextEventId(events) {
+  const upcoming = events
+    .filter((event) => !event.cancelled && temporalStatus(event) === "upcoming")
+    .sort((a, b) => a.date.localeCompare(b.date));
+  return upcoming[0]?.id || "";
 }
 
 export function renderSchedule(container, events = fallOrientationEvents) {
   if (!container) return;
-  container.innerHTML = events.map(eventCard).join("");
+  const publicEvents = events.filter((event) => event.public !== false);
+  const nextId = nextEventId(publicEvents);
+  container.innerHTML = publicEvents
+    .map((event) => eventCard(event, { isNext: event.id === nextId }))
+    .join("");
 }
 
 export function splitEvents(events = fallOrientationEvents) {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
   return events.reduce((groups, event) => {
-    const finalDate = parseDate(event.endDate || event.date);
-    groups[finalDate < today ? "past" : "upcoming"].push(event);
+    if (event.cancelled) {
+      groups.cancelled.push(event);
+      return groups;
+    }
+    const status = temporalStatus(event);
+    const target = status === "past" ? "past" : "upcoming";
+    groups[target].push(event);
     return groups;
-  }, { upcoming: [], past: [] });
+  }, { upcoming: [], past: [], cancelled: [] });
 }
 
 export function bindSchedule(container, events = fallOrientationEvents) {

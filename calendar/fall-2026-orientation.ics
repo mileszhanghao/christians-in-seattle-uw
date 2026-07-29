@@ -1,70 +1,87 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Christians in Seattle at UW//Fall 2026 Orientation//EN
+PRODID:-//Christians in Seattle at UW//Fall 2026//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Christians in Seattle at UW - Fall 2026
+X-WR-TIMEZONE:America/Los_Angeles
 BEGIN:VEVENT
-UID:gospel-preaching-on-campus-20260924@christiansinseattle.org
-DTSTAMP:20260723T040000Z
-DTSTART;VALUE=DATE:20260924
-DTEND;VALUE=DATE:20261005
-SUMMARY:Gospel Preaching on Campus
-DESCRIPTION:Fall quarter campus gospel outreach. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
-END:VEVENT
-BEGIN:VEVENT
-UID:mid-dawg-days-welcome-20260925@christiansinseattle.org
-DTSTAMP:20260723T040000Z
-DTSTART;VALUE=DATE:20260925
-DTEND;VALUE=DATE:20260926
-SUMMARY:Mid-Dawg Days: New Students Welcoming
-DESCRIPTION:A welcome event for new UW students. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+UID:new-students-welcome-20260925@christiansinseattle.org
+DTSTAMP:20260729T200000Z
+DTSTART;TZID=America/Los_Angeles:20260925T173000
+DTEND;TZID=America/Los_Angeles:20260925T193000
+SUMMARY:New Students Welcome Event / 新生欢迎活动
+DESCRIPTION:New Students Welcome Event / 新生欢迎活动\nMeet new UW st
+ udents\, make friends\, and connect with the campus community. / 欢迎 UW
+  新生认识朋友，并与校园学生团体建立联系。\n5:30–7:30
+  p.m. / 下午 5:30–7:30\nUW Seattle campus - room to be confirmed / UW
+  西雅图校区 - 教室待确认\nCapacity: 70+ requested / 容量：申
+ 请 70+ 人
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-new-students-w
+ elcome
 END:VEVENT
 BEGIN:VEVENT
 UID:sunday-worship-september-20260927@christiansinseattle.org
-DTSTAMP:20260723T040000Z
-DTSTART;VALUE=DATE:20260927
-DTEND;VALUE=DATE:20260928
-SUMMARY:Sunday Worship on Campus
-DESCRIPTION:Worship\, Bible reading\, and fellowship. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+DTSTAMP:20260729T200000Z
+DTSTART;TZID=America/Los_Angeles:20260927T100000
+DTEND;TZID=America/Los_Angeles:20260927T140000
+SUMMARY:Lord's Table and Worship on Campus / 校园主的桌子与敬拜
+DESCRIPTION:Lord's Table and Worship on Campus / 校园主的桌子与敬
+ 拜\nGather for the Lord's table\, worship\, Bible reading\, and fellowshi
+ p on campus. / 在校园一同有主的桌子、敬拜、读经和交通
+ 。\nTentative: 10:00 a.m.–2:00 p.m. / 暂定：上午 10:00–下午 2:
+ 00\nUW Seattle campus - room to be confirmed / UW 西雅图校区 - 教室
+ 待确认\nCapacity: Open gathering / 容量：开放聚会
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-sunday-worship
+ -september
 END:VEVENT
 BEGIN:VEVENT
-UID:student-activity-fair-20260930@christiansinseattle.org
-DTSTAMP:20260723T040000Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261002
-SUMMARY:Student Activity Fair
-DESCRIPTION:Meet Christians in Seattle at UW. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+UID:fall-kickoff-20260930@christiansinseattle.org
+DTSTAMP:20260729T200000Z
+DTSTART;TZID=America/Los_Angeles:20260930T173000
+DTEND;TZID=America/Los_Angeles:20260930T193000
+SUMMARY:Fall Quarter Kickoff / 秋季学期启动活动
+DESCRIPTION:Fall Quarter Kickoff / 秋季学期启动活动\nA fall-quarter
+  welcome gathering for new students and friends. / 面向新生和朋友
+ 的秋季学期欢迎聚会。\n5:30–7:30 p.m. / 下午 5:30–7:30\nHUB
+  337 / HUB 337\nCapacity: 70 people / 容量：70 人
+LOCATION:HUB 337 / HUB 337
+URL:https://christiansinseattle.org/fall-schedule.html#event-fall-kickoff
 END:VEVENT
 BEGIN:VEVENT
-UID:first-day-welcome-20260930@christiansinseattle.org
-DTSTAMP:20260723T040000Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:First Day of School: New Student Welcoming
-DESCRIPTION:Connect with students on the first day of fall quarter. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
-END:VEVENT
-BEGIN:VEVENT
-UID:new-student-kickoff-20261002@christiansinseattle.org
-DTSTAMP:20260723T040000Z
-DTSTART;VALUE=DATE:20261002
-DTEND;VALUE=DATE:20261003
-SUMMARY:First Friday: New Student Kickoff
-DESCRIPTION:A fall quarter kickoff for new students and friends. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+UID:friday-topic-discussion-20261002@christiansinseattle.org
+DTSTAMP:20260729T200000Z
+DTSTART;TZID=America/Los_Angeles:20261002T173000
+DTEND;TZID=America/Los_Angeles:20261002T193000
+SUMMARY:Topic-Based Bible Discussion / 主题式圣经讨论
+DESCRIPTION:Topic-Based Bible Discussion / 主题式圣经讨论\nExplore a
+  selected topic from the Bible through a short presentation and open discu
+ ssion. / 通过简短分享和开放讨论，一同探索圣经中的主
+ 题。\n5:30–7:30 p.m. / 下午 5:30–7:30\nHUB 340 / HUB 340\nCapacity
+ : 70 people / 容量：70 人
+LOCATION:HUB 340 / HUB 340
+URL:https://christiansinseattle.org/fall-schedule.html#event-friday-topic-d
+ iscussion
 END:VEVENT
 BEGIN:VEVENT
 UID:sunday-worship-october-20261004@christiansinseattle.org
-DTSTAMP:20260723T040000Z
-DTSTART;VALUE=DATE:20261004
-DTEND;VALUE=DATE:20261005
-SUMMARY:Sunday Worship on Campus
-DESCRIPTION:Worship\, Bible reading\, and fellowship. Time to be confirmed.
-LOCATION:University of Washington\, Seattle - room to be confirmed
+DTSTAMP:20260729T200000Z
+DTSTART;TZID=America/Los_Angeles:20261004T100000
+DTEND;TZID=America/Los_Angeles:20261004T140000
+SUMMARY:Lord's Table and Worship on Campus / 校园主的桌子与敬拜
+DESCRIPTION:Lord's Table and Worship on Campus / 校园主的桌子与敬
+ 拜\nGather for the Lord's table\, worship\, Bible reading\, and fellowshi
+ p on campus. / 在校园一同有主的桌子、敬拜、读经和交通
+ 。\nTentative: 10:00 a.m.–2:00 p.m. / 暂定：上午 10:00–下午 2:
+ 00\nUW Seattle campus - room to be confirmed / UW 西雅图校区 - 教室
+ 待确认\nCapacity: Open gathering / 容量：开放聚会
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-sunday-worship
+ -october
 END:VEVENT
 END:VCALENDAR

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Christians in Seattle at UW//Fall 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Lord's Table and Worship on Campus
+X-WR-TIMEZONE:America/Los_Angeles
+BEGIN:VEVENT
+UID:sunday-worship-september-20260927@christiansinseattle.org
+DTSTAMP:20260729T200000Z
+DTSTART;TZID=America/Los_Angeles:20260927T100000
+DTEND;TZID=America/Los_Angeles:20260927T140000
+SUMMARY:Lord's Table and Worship on Campus / 校园主的桌子与敬拜
+DESCRIPTION:Lord's Table and Worship on Campus / 校园主的桌子与敬
+ 拜\nGather for the Lord's table\, worship\, Bible reading\, and fellowshi
+ p on campus. / 在校园一同有主的桌子、敬拜、读经和交通
+ 。\nTentative: 10:00 a.m.–2:00 p.m. / 暂定：上午 10:00–下午 2:
+ 00\nUW Seattle campus - room to be confirmed / UW 西雅图校区 - 教室
+ 待确认\nCapacity: Open gathering / 容量：开放聚会
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-sunday-worship
+ -september
+END:VEVENT
+END:VCALENDAR
