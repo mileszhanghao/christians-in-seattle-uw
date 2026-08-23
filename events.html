@@ -29,7 +29,13 @@
         <div id="upcoming-events" class="schedule-grid" aria-live="polite"></div>
       </div>
     </section>
-    <section class="section section-accent">
+    <section id="cancelled-events-section" class="section section-accent" hidden>
+      <div class="shell">
+        <div class="section-heading"><h2 data-i18n="pages.cancelledEvents">Cancelled Events</h2></div>
+        <div id="cancelled-events" class="schedule-grid" aria-live="polite"></div>
+      </div>
+    </section>
+    <section class="section section-rose">
       <div class="shell">
         <div class="section-heading"><h2 data-i18n="pages.past">Past Events</h2></div>
         <div id="past-events" class="schedule-grid" aria-live="polite"></div>
@@ -43,6 +49,11 @@
     function render() {
       const groups = splitEvents();
       renderSchedule(document.querySelector("#upcoming-events"), groups.upcoming);
+      const cancelledSection = document.querySelector("#cancelled-events-section");
+      cancelledSection.hidden = !groups.cancelled.length;
+      if (groups.cancelled.length) {
+        renderSchedule(document.querySelector("#cancelled-events"), groups.cancelled);
+      }
       const past = document.querySelector("#past-events");
       if (groups.past.length) {
         renderSchedule(past, groups.past);

@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Christians in Seattle at UW//Fall 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Topic-Based Bible Discussion
+X-WR-TIMEZONE:America/Los_Angeles
+BEGIN:VEVENT
+UID:friday-topic-discussion-20261002@christiansinseattle.org
+DTSTAMP:20260729T200000Z
+DTSTART;TZID=America/Los_Angeles:20261002T173000
+DTEND;TZID=America/Los_Angeles:20261002T193000
+SUMMARY:Topic-Based Bible Discussion / 主题式圣经讨论
+DESCRIPTION:Topic-Based Bible Discussion / 主题式圣经讨论\nExplore a
+  selected topic from the Bible through a short presentation and open discu
+ ssion. / 通过简短分享和开放讨论，一同探索圣经中的主
+ 题。\n5:30–7:30 p.m. / 下午 5:30–7:30\nHUB 340 / HUB 340\nCapacity
+ : 70 people / 容量：70 人
+LOCATION:HUB 340 / HUB 340
+URL:https://christiansinseattle.org/fall-schedule.html#event-friday-topic-d
+ iscussion
+END:VEVENT
+END:VCALENDAR

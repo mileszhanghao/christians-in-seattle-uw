@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Christians in Seattle at UW//Fall 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:New Students Welcome Event
+X-WR-TIMEZONE:America/Los_Angeles
+BEGIN:VEVENT
+UID:new-students-welcome-20260925@christiansinseattle.org
+DTSTAMP:20260729T200000Z
+DTSTART;TZID=America/Los_Angeles:20260925T173000
+DTEND;TZID=America/Los_Angeles:20260925T193000
+SUMMARY:New Students Welcome Event / 新生欢迎活动
+DESCRIPTION:New Students Welcome Event / 新生欢迎活动\nMeet new UW st
+ udents\, make friends\, and connect with the campus community. / 欢迎 UW
+  新生认识朋友，并与校园学生团体建立联系。\n5:30–7:30
+  p.m. / 下午 5:30–7:30\nUW Seattle campus - room to be confirmed / UW
+  西雅图校区 - 教室待确认\nCapacity: 70+ requested / 容量：申
+ 请 70+ 人
+LOCATION:UW Seattle campus - room to be confirmed / UW 西雅图校区 -
+  教室待确认
+URL:https://christiansinseattle.org/fall-schedule.html#event-new-students-w
+ elcome
+END:VEVENT
+END:VCALENDAR
