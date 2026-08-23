@@ -1,0 +1,53 @@
+<!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guestbook | Christians in Seattle at UW</title>
+  <meta name="description" content="Leave a message for the Christians in Seattle at UW community.">
+  <meta property="og:title" content="Guestbook | Christians in Seattle at UW">
+    <meta property="og:description" content="Leave a message for the community, no account needed.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="images/branding/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/site.css">
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div id="site-header"></div>
+    <main id="main">
+      <header class="page-hero">
+        <div class="shell">
+          <p class="eyebrow">Community</p>
+          <h1 data-i18n="pages.guestbookTitle">Guestbook</h1>
+          <p data-i18n="pages.guestbookIntro">Leave a message for the community — no account needed. Please keep messages kind and appropriate; the team reviews and may remove posts.</p>
+        </div>
+      </header>
+
+      <section class="section section-white">
+        <div class="shell">
+          <div class="section-heading"><h2 data-i18n="pages.guestbookFormTitle">Leave a message</h2></div>
+        <div class="guestbook-form-wrap">
+          <iframe id="guestbook-form-frame" title="Guestbook submission form" loading="lazy"></iframe>
+          </div>
+      </div>
+    </section>
+
+      <section class="section section-accent">
+      <div class="shell">
+          <div class="section-heading"><h2 data-i18n="pages.guestbookListTitle">Messages</h2></div>
+          <div class="notice" data-i18n="pages.guestbookTranslateNotice">Messages are shown in their original language. To translate this page, use your browser's built-in translate feature (in Chrome or Edge, right-click the page and choose "Translate to...").</div>
+          <div id="guestbook-list" class="guestbook-list" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script type="module">
+      import { bindGuestbook } from "./js/guestbook.js";
+    bindGuestbook({
+      formFrame: document.querySelector("#guestbook-form-frame"),
+        listContainer: document.querySelector("#guestbook-list"),
+      });
+    </script>
+      </body>
+</html>
