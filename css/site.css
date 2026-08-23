@@ -1148,3 +1148,40 @@ a {
     transition: none !important;
   }
 }
+
+
+.guestbook-form-wrap {
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+#guestbook-form-frame {
+    width: 100%;
+    height: 900px;
+    border: 0;
+    display: block;
+}
+
+.guestbook-list {
+    margin-top: 16px;
+    display: grid;
+    gap: 16px;
+}
+
+.guestbook-entry {
+    min-height: 0;
+}
+
+.guestbook-message {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+@media (max-width: 640px) {
+    #guestbook-form-frame {
+          height: 1100px;
+    }
+}
