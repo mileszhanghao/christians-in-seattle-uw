@@ -10,6 +10,7 @@ const navigation = [
   ["nav.newStudents", "new-students.html"],
   ["nav.resources", "resources.html"],
   ["nav.contact", "contact.html"],
+    ["nav.guestbook", "guestbook.html"],
 ];
 
 function currentFile() {
