@@ -37,6 +37,9 @@ function timeLabel(event) {
 
 function locationLabel(event) {
   if (event.confirmed.location && event.location) return localized(event.location);
+  if (event.location && localized(event.location)) {
+    return `${localized(event.location)} (${t("common.pendingConfirmation")})`;
+  }
   if (event.confirmed.building && event.building) {
     return `${localized(event.building)} — ${t("common.roomTbc")}`;
   }
@@ -74,15 +77,16 @@ function bilingualDescription(event) {
     : "Time to be confirmed / 时间待确认";
   const location = event.confirmed.location
     ? `${event.location.en} / ${event.location.zh}`
-    : event.confirmed.building
-      ? `${event.building.en} — room to be confirmed / ${event.building.zh} — 教室待确认`
-      : "UW Seattle campus — room to be confirmed / UW 西雅图校区 — 教室待确认";
+    : event.location && event.location.en
+      ? `${event.location.en} (pending confirmation) / ${event.location.zh}（待确认）`
+      : event.confirmed.building
+        ? `${event.building.en} — room to be confirmed / ${event.building.zh} — 教室待确认`
+        : "UW Seattle campus — room to be confirmed / UW 西雅图校区 — 教室待确认";
   const lines = [
     `${event.title.en} / ${event.title.zh}`,
     `${event.description.en} / ${event.description.zh}`,
     time,
     location,
-    event.capacity ? `Capacity: ${event.capacity.en} / \u5bb9\u91cf\uff1a${event.capacity.zh}` : "",
     "Please check Instagram for the latest updates. / 请关注 Instagram 获取最新安排。",
   ].filter(Boolean);
   return lines.join("\n");
@@ -112,6 +116,19 @@ function calendarActions(event) {
     </div>`;
 }
 
+function photoGallery(event) {
+  if (!event.images || !event.images.length) return "";
+  const figures = event.images
+    .map(
+      (image) => `
+        <figure class="event-photo">
+          <img src="${image.src}" alt="${localized(image.alt) || localized(event.title)}" loading="lazy">
+        </figure>`
+    )
+    .join("");
+  return `<div class="event-photo-gallery">${figures}</div>`;
+}
+
 export function eventCard(event, options = {}) {
   const nearestClass = options.isNext ? " is-next" : "";
   return `
@@ -122,10 +139,10 @@ export function eventCard(event, options = {}) {
       </div>
       <h3>${localized(event.title)}</h3>
       <p>${localized(event.description)}</p>
+      ${photoGallery(event)}
       <dl class="event-details">
         <div><dt>${t("common.time")}</dt><dd>${event.cancelled ? t("status.cancelled") : timeLabel(event)}</dd></div>
         <div><dt>${t("common.location")}</dt><dd>${event.cancelled ? t("common.notApplicable") : locationLabel(event)}</dd></div>
-        ${event.capacity ? `<div><dt>${t("common.capacity")}</dt><dd>${localized(event.capacity)}</dd></div>` : ""}
         <div><dt>${t("common.audience")}</dt><dd>${localized(event.audience)}</dd></div>
       </dl>
       ${calendarActions(event)}
