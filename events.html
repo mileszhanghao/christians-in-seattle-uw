@@ -44,6 +44,7 @@
   </main>
   <div id="site-footer"></div>
   <script type="module">
+    import { pastEvents } from "./data/events.js";
     import { splitEvents, renderSchedule } from "./js/schedule.js";
     import { getLanguage } from "./js/i18n.js";
     function render() {
@@ -55,8 +56,8 @@
         renderSchedule(document.querySelector("#cancelled-events"), groups.cancelled);
       }
       const past = document.querySelector("#past-events");
-      if (groups.past.length) {
-        renderSchedule(past, groups.past);
+      if (pastEvents.length) {
+        renderSchedule(past, pastEvents);
       } else {
         past.innerHTML = `<p class="empty-state">${getLanguage() === "zh" ? "目前没有过往活动记录。" : "No past events are listed yet."}</p>`;
       }
