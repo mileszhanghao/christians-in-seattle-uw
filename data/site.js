@@ -13,7 +13,7 @@ export const siteData = {
     instagramPreviewImage: "images/social/instagram-verse.jpg",
     discordInviteUrl: "https://discord.gg/KaU6RJ3ZWE",
     discordChannelUrl: "https://discord.com/channels/1416897268094865440/1416897268996378818",
-    campusGroupsUrl: "",
+    campusGroupsUrl: "https://huskylink.washington.edu/actioncenter/organization/christiansinseattle",
     churchWebsiteUrl: "https://tcots-website-preview.netlify.app",
     contactEmail: "christiansinseattle@uw.edu",
     guestbook: {
