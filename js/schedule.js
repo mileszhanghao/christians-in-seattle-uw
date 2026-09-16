@@ -109,7 +109,7 @@ function googleCalendarUrl(event) {
 }
 
 function calendarActions(event) {
-  if (event.cancelled) return "";
+  if (event.cancelled || temporalStatus(event) === "past") return "";
   return `
     <div class="calendar-actions">
       <a class="calendar-link" href="${googleCalendarUrl(event)}" target="_blank" rel="noopener noreferrer">${t("common.addGoogle")}</a>
