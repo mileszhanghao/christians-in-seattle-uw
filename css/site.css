@@ -216,13 +216,23 @@ a {
 .hero-shell {
   position: relative;
   z-index: 1;
-  width: min(1180px, calc(100% - 32px));
+  width: min(880px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 72px 0 56px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  align-items: end;
-  gap: 60px;
+  padding: 88px 0 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-logo-center {
+  width: 108px;
+  height: 108px;
+  margin-bottom: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
 }
 
 .eyebrow {
@@ -247,16 +257,19 @@ a {
 }
 
 .hero-description {
-  max-width: 720px;
+  max-width: 700px;
   margin: 28px 0 0;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: clamp(1rem, 2vw, 1.28rem);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.45;
 }
 
 .hero-actions {
   margin-top: 34px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 
