@@ -83,7 +83,7 @@ export const fallOrientationEvents = [
     time: { en: "3:30–5:00 p.m.", zh: "下午 3:30–5:00" },
     building: { en: "", zh: "" },
     room: "",
-    location: { en: "Spratlen Hall 313 (on UW campus)", zh: "Spratlen Hall 313（UW 校园内）" },
+    location: { en: "Red Square, UW", zh: "UW Red Square" },
     audience: { en: "Open to anyone curious about faith, whether you have never been to church or grew up in one", zh: "欢迎任何对信仰好奇的人——无论你从没进过教会，还是从小在教会长大" },
     registrationRequired: null,
     registrationUrl: "",
