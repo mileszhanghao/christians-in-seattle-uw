@@ -6,6 +6,28 @@ export const fallOrientationEvents = [
       en: "🎉 New semester, new faces — come grab dinner with us! We're hosting a relaxed Mid-Autumn dinner near campus: good food, easy conversation, and a great way to meet people before the quarter gets busy.",
       zh: "🎉 新学期，新朋友——一起来吃顿饭吧！我们在校园附近办一场轻松的中秋节聚餐：好吃的、好聊的，是开学前认识新朋友的好机会。",
     },
+    images: [
+      {
+        src: "images/events/2026-09-mid-autumn-dinner/a611b6534258911541ce17f6d1734c38.jpg",
+        alt: { en: "Group gathered for the Mid-Autumn dinner", zh: "中秋节聚餐大合照" },
+      },
+      {
+        src: "images/events/2026-09-mid-autumn-dinner/bcd6c831fd9572d117cd448021440fc4.jpg",
+        alt: { en: "Singing together during the gathering", zh: "聚会中一起唱诗" },
+      },
+      {
+        src: "images/events/2026-09-mid-autumn-dinner/4c9732215a035472888628a51b534c23.jpg",
+        alt: { en: "Students sharing lyrics sheets", zh: "同学们一起看歌词" },
+      },
+      {
+        src: "images/events/2026-09-mid-autumn-dinner/57a20b9f4545b311e9fcab6a6b878c15.jpg",
+        alt: { en: "Full room at the Mid-Autumn dinner", zh: "满屋子的中秋节聚会" },
+      },
+      {
+        src: "images/events/2026-09-mid-autumn-dinner/ab4bacacd9f2435f47370467cce9c8c6.jpg",
+        alt: { en: "View of the gathering through the window", zh: "从窗外看聚会" },
+      },
+    ],
     date: "2026-09-25",
     startTime: "18:00",
     endTime: "20:00",
@@ -29,6 +51,32 @@ export const fallOrientationEvents = [
       en: "🙏 Start your week grounded. Join us for worship, Scripture, and honest conversation about life and faith — no experience necessary, just come curious.",
       zh: "🙏 让新的一周从安定开始。一起来敬拜、读经，聊聊生活与信仰——不需要任何经验，带着好奇心来就好。",
     },
+    images: [
+      {
+        src: "images/events/2026-09-sunday-worship/d9bd4f41b40f964e99661e7703cb302b.jpg",
+        alt: { en: "Gathered outside for Sunday worship", zh: "户外主日敬拜聚会" },
+      },
+      {
+        src: "images/events/2026-09-sunday-worship/3673a40cde6ef5ce9164bac5086d90cc.jpg",
+        alt: { en: "Singing together on campus", zh: "校园里一起唱诗" },
+      },
+      {
+        src: "images/events/2026-09-sunday-worship/8168ae82bbfd1dfae654d5ebf3b79031.jpg",
+        alt: { en: "Group seated for worship", zh: "大家围坐一起敬拜" },
+      },
+      {
+        src: "images/events/2026-09-sunday-worship/11650e51dacd0e1e556b779f56fe843a.jpg",
+        alt: { en: "Singing with lyric sheets", zh: "拿着歌词单一起唱诗" },
+      },
+      {
+        src: "images/events/2026-09-sunday-worship/3cff952e69d79130db227c3ec7469cee.jpg",
+        alt: { en: "Christians in Seattle tent set up on campus", zh: "校园里的 Christians in Seattle 帐篷" },
+      },
+      {
+        src: "images/events/2026-09-sunday-worship/4eefe5db016d6583513150f3856ff535.jpg",
+        alt: { en: "Gathered near the tent for worship", zh: "在帐篷旁一起聚会" },
+      },
+    ],
     date: "2026-09-27",
     startTime: "15:30",
     endTime: "17:00",
@@ -90,6 +138,29 @@ export const fallOrientationEvents = [
     public: true,
     cancelled: false,
     confirmed: { date: true, time: true, building: true, room: true, location: true },
+  },
+  {
+    id: "fall-hike",
+    title: { en: "Fall Hike", zh: "秋季爬山" },
+    description: {
+      en: "🏔️ Let's get outside! Join us for a morning hike together — fresh air, good views, and time to connect outside the usual routine.",
+      zh: "🏔️ 一起出门走走吧！周六早上一起去爬山——呼吸新鲜空气、看看风景，在平常日子之外多一些彼此认识的时间。",
+    },
+    date: "2026-10-03",
+    startTime: "09:00",
+    endTime: "13:00",
+    time: { en: "9:00 a.m., meet at Red Square", zh: "上午 9:00，红场集合" },
+    building: { en: "", zh: "" },
+    room: "",
+    location: { en: "Meet at Red Square, UW", zh: "UW 红场集合" },
+    audience: { en: "Open to anyone who wants a morning outdoors with good company", zh: "欢迎任何想在户外度过一个愉快早晨的朋友" },
+    registrationRequired: null,
+    registrationUrl: "",
+    contact: { en: "Check Instagram or Discord before attending", zh: "参加前请查看 Instagram 或 Discord" },
+    source: "Announced, Sep 2026",
+    public: true,
+    cancelled: false,
+    confirmed: { date: true, time: true, building: false, room: false, location: true },
   },
   {
     id: "sunday-worship-october",
