@@ -11,6 +11,7 @@ export const siteData = {
     logoImage: "images/branding/logo-cis-uw.jpg",
     socialCommunityImage: "images/social/community-fellowship.jpg",
     instagramPreviewImage: "images/social/instagram-verse.jpg",
+    scheduleImagePreview: "images/events/2026-09-mid-autumn-dinner/4c9732215a035472888628a51b534c23.jpg",
     discordInviteUrl: "https://discord.gg/KaU6RJ3ZWE",
     discordChannelUrl: "https://discord.com/channels/1416897268094865440/1416897268996378818",
     campusGroupsUrl: "https://huskylink.washington.edu/actioncenter/organization/christiansinseattle",
