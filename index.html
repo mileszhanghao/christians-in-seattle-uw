@@ -39,7 +39,7 @@
         <h1 data-public-name>Christians in Seattle at UW</h1>
         <p class="hero-description" data-i18n="home.description">A welcoming student community at the University of Washington where students can connect, read the Bible, build friendships, and explore faith together.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="fall-schedule.html" data-i18n="home.viewSchedule">View Full Schedule</a>
+          <a class="button button-primary" href="fall-schedule.html" data-social-preview="schedule" data-i18n="home.viewSchedule">View Full Schedule</a>
           <a class="button button-secondary" data-link="discordInviteUrl" data-social-preview="discord" data-i18n="home.joinDiscord">Join Discord</a>
           <a class="button button-secondary" data-link="instagramUrl" data-social-preview="instagram" data-i18n="home.followInstagram">Follow Instagram</a>
           <a class="button button-secondary" href="#" data-google-calendar-all data-i18n="common.addAll">Add all to Google Calendar</a>
@@ -54,16 +54,48 @@
           <div class="section-heading">
             <p class="eyebrow">Fall 2026</p>
             <h2 data-i18n="home.featured">Fall Quarter Schedule</h2>
-            <p data-i18n="home.featuredIntro">September 25 through October 4, 2026</p>
           </div>
           <div class="schedule-actions">
-            <a class="button button-light" href="fall-schedule.html" data-i18n="home.viewSchedule">View Full Schedule</a>
+            <a class="button button-light" href="fall-schedule.html" data-social-preview="schedule" data-i18n="home.viewSchedule">View Full Schedule</a>
             <a class="button button-primary" href="#" data-google-calendar-all data-i18n="common.addAll">Add all to Google Calendar</a>
             <a class="button button-light" data-link="discordInviteUrl" data-social-preview="discord" data-i18n="home.joinDiscord">Join Discord</a>
             <a class="button button-light" data-link="instagramUrl" data-social-preview="instagram" data-i18n="home.followInstagram">Follow Instagram</a>
           </div>
         </div>
         <div id="featured-schedule" class="schedule-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section section-accent">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Weekly Bible Reading</p>
+          <h2 data-i18n="pages.bibleTitle">Bible Study &amp; Fellowship</h2>
+          <p data-i18n="pages.readingScheduleNote">Starting this week, for the remaining 10 weeks of the quarter:</p>
+        </div>
+        <div class="info-grid">
+          <article class="info-card">
+            <span class="activity-index">EN · WED</span>
+            <h3 data-i18n="pages.englishReading">English Bible Reading</h3>
+            <p data-i18n="pages.englishReadingWed">Wednesday, 4:30–5:30 PM</p>
+          </article>
+          <article class="info-card">
+            <span class="activity-index">EN · THU</span>
+            <h3 data-i18n="pages.englishReading">English Bible Reading</h3>
+            <p data-i18n="pages.englishReadingThu">Thursday, 4:30–5:30 PM</p>
+          </article>
+          <article class="info-card">
+            <span class="activity-index">中文 · 周二</span>
+            <h3 data-i18n="pages.chineseReading">Chinese Bible Reading</h3>
+            <p data-i18n="pages.chineseReadingTue">Tuesday, 5:30–6:30 PM</p>
+          </article>
+          <article class="info-card">
+            <span class="activity-index">中文 · 周四</span>
+            <h3 data-i18n="pages.chineseReading">Chinese Bible Reading</h3>
+            <p data-i18n="pages.chineseReadingThu">Thursday, 12:00–1:00 PM</p>
+          </article>
+        </div>
+        <p style="margin-top:20px;"><a class="button button-dark" href="bible-study.html" data-i18n="common.learnMore">Learn more</a></p>
       </div>
     </section>
 
@@ -125,8 +157,14 @@
 
   <div id="site-footer"></div>
   <script type="module">
-    import { bindSchedule } from "./js/schedule.js";
-    bindSchedule(document.querySelector("#featured-schedule"));
+    import { fallOrientationEvents } from "./data/events.js";
+    import { splitEvents, renderSchedule } from "./js/schedule.js";
+    function renderHomeSchedule() {
+      const groups = splitEvents(fallOrientationEvents);
+      renderSchedule(document.querySelector("#featured-schedule"), groups.upcoming);
+    }
+    renderHomeSchedule();
+    window.addEventListener("languagechange", renderHomeSchedule);
   </script>
 </body>
 </html>
