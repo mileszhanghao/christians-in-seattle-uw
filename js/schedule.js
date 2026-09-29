@@ -140,11 +140,13 @@ export function eventCard(event, options = {}) {
       <h3>${localized(event.title)}</h3>
       <p>${localized(event.description)}</p>
       ${photoGallery(event)}
-      <dl class="event-details">
+      ${temporalStatus(event) === "past"
+        ? ""
+        : `<dl class="event-details">
         <div><dt>${t("common.time")}</dt><dd>${event.cancelled ? t("status.cancelled") : timeLabel(event)}</dd></div>
         <div><dt>${t("common.location")}</dt><dd>${event.cancelled ? t("common.notApplicable") : locationLabel(event)}</dd></div>
         <div><dt>${t("common.audience")}</dt><dd>${localized(event.audience)}</dd></div>
-      </dl>
+      </dl>`}
       ${calendarActions(event)}
     </article>`;
 }
