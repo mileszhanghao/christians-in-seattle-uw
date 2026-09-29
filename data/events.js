@@ -12,20 +12,12 @@ export const fallOrientationEvents = [
         alt: { en: "Group gathered for the Mid-Autumn dinner", zh: "中秋节聚餐大合照" },
       },
       {
-        src: "images/events/2026-09-mid-autumn-dinner/bcd6c831fd9572d117cd448021440fc4.jpg",
-        alt: { en: "Singing together during the gathering", zh: "聚会中一起唱诗" },
-      },
-      {
-        src: "images/events/2026-09-mid-autumn-dinner/4c9732215a035472888628a51b534c23.jpg",
-        alt: { en: "Students sharing lyrics sheets", zh: "同学们一起看歌词" },
-      },
-      {
         src: "images/events/2026-09-mid-autumn-dinner/57a20b9f4545b311e9fcab6a6b878c15.jpg",
         alt: { en: "Full room at the Mid-Autumn dinner", zh: "满屋子的中秋节聚会" },
       },
       {
-        src: "images/events/2026-09-mid-autumn-dinner/ab4bacacd9f2435f47370467cce9c8c6.jpg",
-        alt: { en: "View of the gathering through the window", zh: "从窗外看聚会" },
+        src: "images/events/2026-09-mid-autumn-dinner/bcd6c831fd9572d117cd448021440fc4.jpg",
+        alt: { en: "Singing together during the gathering", zh: "聚会中一起唱诗" },
       },
     ],
     date: "2026-09-25",
@@ -53,28 +45,16 @@ export const fallOrientationEvents = [
     },
     images: [
       {
-        src: "images/events/2026-09-sunday-worship/d9bd4f41b40f964e99661e7703cb302b.jpg",
-        alt: { en: "Gathered outside for Sunday worship", zh: "户外主日敬拜聚会" },
-      },
-      {
-        src: "images/events/2026-09-sunday-worship/3673a40cde6ef5ce9164bac5086d90cc.jpg",
-        alt: { en: "Singing together on campus", zh: "校园里一起唱诗" },
-      },
-      {
-        src: "images/events/2026-09-sunday-worship/8168ae82bbfd1dfae654d5ebf3b79031.jpg",
-        alt: { en: "Group seated for worship", zh: "大家围坐一起敬拜" },
-      },
-      {
-        src: "images/events/2026-09-sunday-worship/11650e51dacd0e1e556b779f56fe843a.jpg",
-        alt: { en: "Singing with lyric sheets", zh: "拿着歌词单一起唱诗" },
-      },
-      {
         src: "images/events/2026-09-sunday-worship/3cff952e69d79130db227c3ec7469cee.jpg",
         alt: { en: "Christians in Seattle tent set up on campus", zh: "校园里的 Christians in Seattle 帐篷" },
       },
       {
-        src: "images/events/2026-09-sunday-worship/4eefe5db016d6583513150f3856ff535.jpg",
-        alt: { en: "Gathered near the tent for worship", zh: "在帐篷旁一起聚会" },
+        src: "images/events/2026-09-sunday-worship/d9bd4f41b40f964e99661e7703cb302b.jpg",
+        alt: { en: "Gathered outside for Sunday worship", zh: "户外主日敬拜聚会" },
+      },
+      {
+        src: "images/events/2026-09-sunday-worship/8168ae82bbfd1dfae654d5ebf3b79031.jpg",
+        alt: { en: "Group seated for worship", zh: "大家围坐一起敬拜" },
       },
     ],
     date: "2026-09-27",
