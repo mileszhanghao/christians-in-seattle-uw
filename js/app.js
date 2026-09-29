@@ -92,11 +92,10 @@ function renderConfigLinks() {
 
 function renderGoogleCalendarLinks() {
   const calendarUrl = new URL("calendar/fall-2026-orientation.ics", document.baseURI).href;
-  const googleUrl = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(calendarUrl)}`;
   document.querySelectorAll("[data-google-calendar-all]").forEach((element) => {
-    element.href = googleUrl;
-    element.target = "_blank";
-    element.rel = "noopener noreferrer";
+    element.href = calendarUrl;
+    element.setAttribute("download", "christians-in-seattle-fall-2026.ics");
+    element.removeAttribute("target");
   });
 }
 
@@ -131,6 +130,13 @@ function renderSocialPreviews() {
           <strong>Christians in Seattle UW</strong>
           <small>${isChinese ? "活动通知、问题、经文与校园交通" : "Events, questions, Bible verses, and campus fellowship"}</small>
           <a href="${siteData.discordChannelUrl}" target="_blank" rel="noopener noreferrer">${isChinese ? "预览 #general" : "Preview #general"} &rarr;</a>
+        </span>`;
+    } else if (type === "schedule") {
+      card.innerHTML = `
+        <img src="${siteData.scheduleImagePreview}" alt="">
+        <span class="social-preview-copy">
+          <strong>${isChinese ? "秋季迎新活动" : "Fall Welcome Events"}</strong>
+          <small>${isChinese ? "看看我们的聚会是什么样子" : "See what our gatherings look like"}</small>
         </span>`;
     } else {
       card.innerHTML = `
