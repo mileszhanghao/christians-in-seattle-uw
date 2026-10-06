@@ -305,21 +305,21 @@ export const weeklyEvents = [
   },
   {
     id: "saturday-hiking",
-    title: { en: "Saturday Morning Hike", zh: "周六早晨爬山" },
+    title: { en: "Saturday Hike", zh: "周六爬山" },
     description: {
-      en: "🥾 We hike together on Saturday mornings. Where to? Not decided yet — and we'd love your ideas! Tell us your favorite trail on Instagram or Discord.",
-      zh: "🥾 周六早上我们会一起去爬山。去哪里？还没定——欢迎大家提建议！请在 Instagram 或 Discord 告诉我们你喜欢的路线。",
+      en: "🥾 We hike together on Saturdays, tentatively 11 AM–1 PM. Time and place aren't set yet — come help us plan the details! Once it's decided, we'll update and let everyone know.",
+      zh: "🥾 周六我们会一起爬山，暂定上午 11:00–下午 1:00。时间和地点都还没定——欢迎大家一起提议、规划活动细节！确定后我们会更新并通知大家。",
     },
   },
 ];
 
 // Weekly timetable (day: 0 = Sunday ... 6 = Saturday). Times are 24-hour HH:MM.
 export const weeklySchedule = [
-  { id: "zh-reading-tue", day: 2, start: "17:30", end: "18:30", kind: "reading", title: { en: "Chinese Bible Study", zh: "中文查经" }, place: { en: "Suzzallo Library 338", zh: "Suzzallo 图书馆 338" } },
-  { id: "en-reading-wed", day: 3, start: "17:30", end: "18:30", kind: "reading", title: { en: "English Bible Study", zh: "英文查经" }, place: { en: "Suzzallo Library 334", zh: "Suzzallo 图书馆 334" } },
-  { id: "zh-reading-thu", day: 4, start: "12:00", end: "13:00", kind: "reading", title: { en: "Chinese Bible Study", zh: "中文查经" }, place: { en: "Suzzallo Library 334", zh: "Suzzallo 图书馆 334" } },
-  { id: "en-reading-thu", day: 4, start: "16:30", end: "17:30", kind: "reading", title: { en: "English Bible Study", zh: "英文查经" }, place: { en: "Suzzallo Library 334", zh: "Suzzallo 图书馆 334" } },
+  { id: "zh-reading-tue", day: 2, start: "17:30", end: "18:30", kind: "reading-zh", title: { en: "Chinese Bible Study", zh: "中文查经" }, place: { en: "Suzzallo 334", zh: "Suzzallo 334" } },
+  { id: "en-reading-wed", day: 3, start: "16:30", end: "17:30", kind: "reading-en", title: { en: "English Bible Study", zh: "英文查经" }, place: { en: "Suzzallo 334", zh: "Suzzallo 334" } },
+  { id: "zh-reading-thu", day: 4, start: "12:00", end: "13:00", kind: "reading-zh", title: { en: "Chinese Bible Study", zh: "中文查经" }, place: { en: "Suzzallo 334", zh: "Suzzallo 334" } },
+  { id: "en-reading-thu", day: 4, start: "16:30", end: "17:30", kind: "reading-en", title: { en: "English Bible Study", zh: "英文查经" }, place: { en: "Suzzallo 334", zh: "Suzzallo 334" } },
   { id: "friday-family", day: 5, start: "17:30", end: "19:00", kind: "fellowship", title: { en: "Family Gathering", zh: "家庭聚会" }, place: { en: "Near campus", zh: "校园附近" } },
-  { id: "saturday-hike", day: 6, start: "09:00", end: "12:00", kind: "hike", title: { en: "Morning Hike", zh: "早晨爬山" }, timeNote: { en: "Morning", zh: "早上" }, place: { en: "Location TBD — suggest a trail!", zh: "地点待定——欢迎提议！" } },
-  { id: "sunday-gathering", day: 0, start: "11:00", end: "13:00", kind: "worship", title: { en: "Sunday Gathering", zh: "主日聚会" }, place: { en: "See Instagram / Discord", zh: "见 Instagram / Discord" } },
+  { id: "saturday-hike", day: 6, start: "11:00", end: "13:00", kind: "hike", title: { en: "Hike", zh: "爬山" }, timeNote: { en: "11 AM–1 PM", zh: "11:00–13:00" }, place: { en: "Time/place TBD", zh: "时间地点待定" } },
+  { id: "sunday-gathering", day: 0, start: "11:00", end: "13:00", kind: "worship", title: { en: "Sunday Gathering", zh: "主日聚会" }, place: { en: "Instagram / Discord", zh: "Instagram / Discord" } },
 ];
