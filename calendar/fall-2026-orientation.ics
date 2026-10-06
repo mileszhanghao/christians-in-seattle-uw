@@ -3,56 +3,89 @@ VERSION:2.0
 PRODID:-//Christians in Seattle at UW//Fall 2026//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Christians in Seattle at UW - Fall 2026
+X-WR-CALNAME:Christians in Seattle at UW - Weekly
 X-WR-TIMEZONE:America/Los_Angeles
+BEGIN:VTIMEZONE
+TZID:America/Los_Angeles
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+TZNAME:PDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
 BEGIN:VEVENT
-UID:mid-autumn-dinner-20260925@christiansinseattle.org
-DTSTAMP:20260916T060000Z
-DTSTART;TZID=America/Los_Angeles:20260925T180000
-DTEND;TZID=America/Los_Angeles:20260925T200000
-SUMMARY:Mid-Autumn Festival Dinner / 中秋节聚餐
-DESCRIPTION:New semester\, new faces — come grab dinner with us! A relaxed Mid-Autumn dinner near campus. / 新学期，新朋友——一起来吃顿饭吧！在校园附近的轻松中秋节聚餐。
-LOCATION:Near Campus\, 5221 11th Ave NE
-URL:https://christiansinseattle.org/fall-schedule.html#event-mid-autumn-dinner
+UID:reading-zh-tue@christiansinseattle.org
+DTSTAMP:20261005T180000Z
+DTSTART;TZID=America/Los_Angeles:20261006T173000
+DTEND;TZID=America/Los_Angeles:20261006T183000
+RRULE:FREQ=WEEKLY;COUNT=10
+SUMMARY:Chinese Bible Reading / 中文读经
+DESCRIPTION:Weekly Chinese Bible reading. / 每周中文读经。
+LOCATION:UW Suzzallo Library Study Hall 334 (room may change - check Instagram or Discord)
+URL:https://christiansinseattle.org/fall-schedule.html
 END:VEVENT
 BEGIN:VEVENT
-UID:sunday-worship-september-20260927@christiansinseattle.org
-DTSTAMP:20260916T060000Z
-DTSTART;TZID=America/Los_Angeles:20260927T153000
-DTEND;TZID=America/Los_Angeles:20260927T170000
-SUMMARY:Sunday Worship / 主日敬拜
-DESCRIPTION:Start your week grounded. Worship\, Scripture\, and honest conversation about life and faith. / 让新的一周从安定开始。一起来敬拜、读经。
-LOCATION:Spratlen Hall 313 (on UW campus)
-URL:https://christiansinseattle.org/fall-schedule.html#event-sunday-worship-september
+UID:reading-en-wed@christiansinseattle.org
+DTSTAMP:20261005T180000Z
+DTSTART;TZID=America/Los_Angeles:20261007T163000
+DTEND;TZID=America/Los_Angeles:20261007T173000
+RRULE:FREQ=WEEKLY;COUNT=10
+SUMMARY:English Bible Reading / 英文读经
+DESCRIPTION:Weekly English Bible reading. / 每周英文读经。
+LOCATION:UW Suzzallo Library Study Hall 334 (room may change - check Instagram or Discord)
+URL:https://christiansinseattle.org/fall-schedule.html
 END:VEVENT
 BEGIN:VEVENT
-UID:new-huskies-welcoming-20260930@christiansinseattle.org
-DTSTAMP:20260916T060000Z
-DTSTART;TZID=America/Los_Angeles:20260930T180000
-DTEND;TZID=America/Los_Angeles:20260930T190000
-SUMMARY:New Huskies Welcoming / 新哈士奇欢迎活动
-DESCRIPTION:First-week jitters? We've been there. Come meet other students and build community at UW. / 开学第一周有点紧张？来认识新朋友。
-LOCATION:HUB 337
-URL:https://christiansinseattle.org/fall-schedule.html#event-new-huskies-welcoming
+UID:reading-zh-thu@christiansinseattle.org
+DTSTAMP:20261005T180000Z
+DTSTART;TZID=America/Los_Angeles:20261008T120000
+DTEND;TZID=America/Los_Angeles:20261008T130000
+RRULE:FREQ=WEEKLY;COUNT=10
+SUMMARY:Chinese Bible Reading / 中文读经
+DESCRIPTION:Weekly Chinese Bible reading. / 每周中文读经。
+LOCATION:UW Suzzallo Library Study Hall 334 (room may change - check Instagram or Discord)
+URL:https://christiansinseattle.org/fall-schedule.html
 END:VEVENT
 BEGIN:VEVENT
-UID:fall-quarter-kickoff-20261002@christiansinseattle.org
-DTSTAMP:20260916T060000Z
-DTSTART;TZID=America/Los_Angeles:20261002T183000
-DTEND;TZID=America/Los_Angeles:20261002T193000
-SUMMARY:Fall Quarter Kick-Off / 秋季学期启动活动
-DESCRIPTION:New quarter\, new opportunities! Games\, food\, and good company. / 新学期，新机会！游戏、美食和好伙伴。
-LOCATION:HUB Welcome Center
-URL:https://christiansinseattle.org/fall-schedule.html#event-fall-quarter-kickoff
+UID:reading-en-thu@christiansinseattle.org
+DTSTAMP:20261005T180000Z
+DTSTART;TZID=America/Los_Angeles:20261008T163000
+DTEND;TZID=America/Los_Angeles:20261008T173000
+RRULE:FREQ=WEEKLY;COUNT=10
+SUMMARY:English Bible Reading / 英文读经
+DESCRIPTION:Weekly English Bible reading. / 每周英文读经。
+LOCATION:UW Suzzallo Library Study Hall 334 (room may change - check Instagram or Discord)
+URL:https://christiansinseattle.org/fall-schedule.html
 END:VEVENT
 BEGIN:VEVENT
-UID:sunday-worship-october-20261004@christiansinseattle.org
-DTSTAMP:20260916T060000Z
-DTSTART;TZID=America/Los_Angeles:20261004T160000
-DTEND;TZID=America/Los_Angeles:20261004T170000
-SUMMARY:Sunday Worship / 主日敬拜
-DESCRIPTION:Another Sunday\, another chance to slow down and connect — with God and with each other. / 又一个主日，又一次慢下来彼此连接的机会。
-LOCATION:Spratlen 313
-URL:https://christiansinseattle.org/fall-schedule.html#event-sunday-worship-october
+UID:friday-family@christiansinseattle.org
+DTSTAMP:20261005T180000Z
+DTSTART;TZID=America/Los_Angeles:20261009T173000
+DTEND;TZID=America/Los_Angeles:20261009T190000
+RRULE:FREQ=WEEKLY;COUNT=10
+SUMMARY:Friday Family Gathering / 周五家庭聚会
+DESCRIPTION:Weekly family gathering near campus. Check Instagram or Discord for the address. / 校园附近的每周家庭聚会，地址请查看 Instagram 或 Discord。
+LOCATION:Near UW campus
+URL:https://christiansinseattle.org/fall-schedule.html
+END:VEVENT
+BEGIN:VEVENT
+UID:saturday-hike@christiansinseattle.org
+DTSTAMP:20261005T180000Z
+DTSTART;TZID=America/Los_Angeles:20261010T090000
+DTEND;TZID=America/Los_Angeles:20261010T130000
+RRULE:FREQ=WEEKLY;COUNT=10
+SUMMARY:Saturday Morning Hike / 周六早晨爬山
+DESCRIPTION:Location to be decided - suggestions welcome! / 地点待定，欢迎提议！
+LOCATION:To be decided
+URL:https://christiansinseattle.org/fall-schedule.html
 END:VEVENT
 END:VCALENDAR
