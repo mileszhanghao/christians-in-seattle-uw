@@ -30,14 +30,14 @@ DTEND;TZID=America/Los_Angeles:20261006T183000
 RRULE:FREQ=WEEKLY;COUNT=10
 SUMMARY:Chinese Bible Study / 中文查经
 DESCRIPTION:Weekly Chinese Bible study. / 每周中文查经。
-LOCATION:UW Suzzallo Library Study Hall 338 (room may change - check Instagram or Discord)
+LOCATION:UW Suzzallo Library Study Hall 334 (room may change - check Instagram or Discord)
 URL:https://christiansinseattle.org/events.html
 END:VEVENT
 BEGIN:VEVENT
 UID:reading-en-wed@christiansinseattle.org
 DTSTAMP:20261005T180000Z
-DTSTART;TZID=America/Los_Angeles:20261007T173000
-DTEND;TZID=America/Los_Angeles:20261007T183000
+DTSTART;TZID=America/Los_Angeles:20261007T163000
+DTEND;TZID=America/Los_Angeles:20261007T173000
 RRULE:FREQ=WEEKLY;COUNT=10
 SUMMARY:English Bible Study / 英文查经
 DESCRIPTION:Weekly English Bible study. / 每周英文查经。
@@ -80,11 +80,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:saturday-hike@christiansinseattle.org
 DTSTAMP:20261005T180000Z
-DTSTART;TZID=America/Los_Angeles:20261010T090000
-DTEND;TZID=America/Los_Angeles:20261010T120000
+DTSTART;TZID=America/Los_Angeles:20261010T110000
+DTEND;TZID=America/Los_Angeles:20261010T130000
 RRULE:FREQ=WEEKLY;COUNT=10
-SUMMARY:Saturday Morning Hike / 周六早晨爬山
-DESCRIPTION:Location to be decided - suggestions welcome! / 地点待定，欢迎提议！
+SUMMARY:Saturday Hike / 周六爬山
+DESCRIPTION:Time and place to be decided - join us in planning! We will update and notify everyone. / 时间地点待定，欢迎一起提议和规划，确定后会更新并通知大家。
 LOCATION:To be decided
 URL:https://christiansinseattle.org/events.html
 END:VEVENT
