@@ -89,10 +89,12 @@ function renderConfigLinks() {
 
 function renderGoogleCalendarLinks() {
   const calendarUrl = new URL("calendar/fall-2026-orientation.ics", document.baseURI).href;
+  const subscribeUrl = `https://calendar.google.com/calendar/r?cid=${calendarUrl.replace(/^https?:/, "webcal:")}`;
   document.querySelectorAll("[data-google-calendar-all]").forEach((element) => {
-    element.href = calendarUrl;
-    element.setAttribute("download", "christians-in-seattle-fall-2026.ics");
-    element.removeAttribute("target");
+    element.href = subscribeUrl;
+    element.target = "_blank";
+    element.rel = "noopener noreferrer";
+    element.removeAttribute("download");
   });
 }
 
