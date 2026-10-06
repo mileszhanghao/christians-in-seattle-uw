@@ -208,7 +208,7 @@ export function renderWeekly(container, events = weeklyEvents) {
   container.innerHTML = events.map(weeklyCard).join("");
 }
 
-const TT_START = 9 * 60;
+const TT_START = 11 * 60;
 const TT_END = 19 * 60 + 30;
 const TT_DAYS = [
   { d: 2, en: "Tue", zh: "周二" },
@@ -232,7 +232,10 @@ function clock(value) {
 }
 
 function slotTime(slot) {
-  return slot.timeNote ? localized(slot.timeNote) : `${clock(slot.start)}–${clock(slot.end)}`;
+  if (slot.timeNote) return localized(slot.timeNote);
+  const a = clock(slot.start), b = clock(slot.end);
+  const [a1, a2] = a.split(" "), [, b2] = b.split(" ");
+  return a2 && a2 === b2 ? `${a1}–${b}` : `${a}–${b}`;
 }
 
 function slotInner(slot) {
@@ -276,7 +279,12 @@ function timetableBlock() {
     <div class="timetable-wrap">
       ${timetableHtml()}
       <ul class="tt-notes">${notes}</ul>
-      <p class="tt-join">${t("pages.joinNote")} <a href="contact.html">${t("nav.contact")} →</a> <a href="bible-study.html">${t("pages.bibleLink")} →</a></p>
+      <div class="tt-join">
+        <h3>${t("pages.joinTitle")}</h3>
+        <p>${t("pages.joinBody1")}</p>
+        <p>${t("pages.joinBody2")}</p>
+        <p class="tt-join-links"><a href="index.html#interest">${t("pages.joinInterest")} →</a><a href="contact.html">${t("nav.contact")} →</a><a href="bible-study.html">${t("pages.bibleLink")} →</a></p>
+      </div>
     </div>`;
 }
 
