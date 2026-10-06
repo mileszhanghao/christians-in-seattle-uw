@@ -1,5 +1,5 @@
-html {
-  overflow-x: clip;
+body {
+  overflow-x: hidden;
 }
 
 :root {
