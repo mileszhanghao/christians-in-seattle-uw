@@ -173,6 +173,13 @@ function renderConfiguredContent() {
     element.href = `mailto:${siteData.contactEmail}`;
     element.textContent = siteData.contactEmail;
   });
+  document.querySelectorAll("[data-contact-phones]").forEach((element) => {
+    const phones = siteData.contactPhones || [];
+    element.hidden = !phones.length;
+    element.innerHTML = phones
+      .map((person) => `<a href="tel:${person.phone.replace(/[^0-9+]/g, "")}"><span>${person.name} · ${person.phone}</span><span aria-hidden="true">☎</span></a>`)
+      .join("");
+  });
   document.querySelectorAll("[data-instagram-username]").forEach((element) => {
     element.textContent = `@${siteData.instagramUsername}`;
   });
