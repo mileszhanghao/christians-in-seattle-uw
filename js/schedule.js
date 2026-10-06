@@ -1,4 +1,4 @@
-import { fallOrientationEvents } from "../data/events.js";
+import { fallOrientationEvents, weeklyEvents } from "../data/events.js";
 import { siteData } from "../data/site.js";
 import { getLanguage, localized, t } from "./i18n.js";
 
@@ -184,4 +184,34 @@ export function bindSchedule(container, events = fallOrientationEvents) {
   const render = () => renderSchedule(container, events);
   render();
   window.addEventListener("languagechange", render);
+}
+
+export function weeklyCard(event) {
+  return `
+    <article id="event-${event.id}" class="event-card">
+      <div class="event-card-top">
+        <p class="event-date">${localized(event.day)}</p>
+        <div class="status-row"><span class="status-badge status-upcoming">${t("common.weekly")}</span></div>
+      </div>
+      <h3>${localized(event.title)}</h3>
+      <p>${localized(event.description)}</p>
+      <dl class="event-details">
+        <div><dt>${t("common.time")}</dt><dd>${localized(event.time)}</dd></div>
+        <div><dt>${t("common.location")}</dt><dd>${localized(event.location)}</dd></div>
+        <div><dt>${t("common.audience")}</dt><dd>${localized(event.audience)}</dd></div>
+      </dl>
+    </article>`;
+}
+
+export function renderWeekly(container, events = weeklyEvents) {
+  if (!container) return;
+  container.innerHTML = events.map(weeklyCard).join("");
+}
+
+export function renderUpcoming(container, upcoming = []) {
+  if (!container) return;
+  container.innerHTML = [
+    ...weeklyEvents.map(weeklyCard),
+    ...upcoming.filter((e) => e.public !== false).map((e) => eventCard(e)),
+  ].join("");
 }
