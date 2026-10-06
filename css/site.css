@@ -1264,7 +1264,7 @@ a {
 .timetable {
   display: grid;
   grid-template-columns: 62px repeat(6, minmax(0, 1fr));
-  grid-template-rows: 40px repeat(21, 32px);
+  grid-template-rows: 40px repeat(17, 44px);
   column-gap: 6px;
 }
 
@@ -1319,7 +1319,8 @@ a {
   opacity: 0.92;
 }
 
-.tt-reading { background: #7f9170; }
+.tt-reading-en { background: #7f9170; }
+.tt-reading-zh { background: #b5785a; }
 .tt-fellowship { background: var(--rose); }
 .tt-hike { background: var(--blue); }
 .tt-worship { background: var(--gold); color: #2b2100; }
@@ -1351,8 +1352,13 @@ a {
   line-height: 1.5;
 }
 
+.tt-join h3 { margin: 0 0 6px; color: var(--evergreen); font-size: 1rem; }
+.tt-join p { margin: 0 0 8px; }
+.tt-join-links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 4px 0 0 !important; }
+.tt-event small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
 .tt-join a {
-  margin-left: 6px;
+  margin-left: 0;
   color: var(--violet);
   font-weight: 800;
   white-space: nowrap;
