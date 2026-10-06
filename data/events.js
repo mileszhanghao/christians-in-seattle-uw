@@ -120,29 +120,6 @@ export const fallOrientationEvents = [
     confirmed: { date: true, time: true, building: true, room: true, location: true },
   },
   {
-    id: "fall-hike",
-    title: { en: "Fall Hike", zh: "秋季爬山" },
-    description: {
-      en: "🏔️ Let's get outside! Join us for a morning hike together — fresh air, good views, and time to connect outside the usual routine.",
-      zh: "🏔️ 一起出门走走吧！周六早上一起去爬山——呼吸新鲜空气、看看风景，在平常日子之外多一些彼此认识的时间。",
-    },
-    date: "2026-10-03",
-    startTime: "09:00",
-    endTime: "13:00",
-    time: { en: "9:00 a.m., meet at Red Square", zh: "上午 9:00，红场集合" },
-    building: { en: "", zh: "" },
-    room: "",
-    location: { en: "Meet at Red Square, UW", zh: "UW 红场集合" },
-    audience: { en: "Open to anyone who wants a morning outdoors with good company", zh: "欢迎任何想在户外度过一个愉快早晨的朋友" },
-    registrationRequired: null,
-    registrationUrl: "",
-    contact: { en: "Check Instagram or Discord before attending", zh: "参加前请查看 Instagram 或 Discord" },
-    source: "Announced, Sep 2026",
-    public: true,
-    cancelled: false,
-    confirmed: { date: true, time: true, building: false, room: false, location: true },
-  },
-  {
     id: "sunday-worship-october",
     title: { en: "Sunday Worship", zh: "主日敬拜" },
     description: {
@@ -264,5 +241,32 @@ export const regularEvents = [
     time: "",
     location: "",
     confirmed: { date: false, time: false, location: false },
+  },
+];
+
+export const weeklyEvents = [
+  {
+    id: "friday-family-gathering",
+    day: { en: "Every Friday", zh: "每周五" },
+    title: { en: "Friday Family Gathering", zh: "周五家庭聚会" },
+    description: {
+      en: "🏡 End the week around a table, not a screen. Come hang out, share a meal, sing a little, and feel at home with us — all are welcome.",
+      zh: "🏡 一周的最后，不如围坐在一起，而不是对着屏幕。来这里聊聊天、吃点东西、唱几首诗，像回家一样——人人都欢迎。",
+    },
+    time: { en: "5:30–7:00 p.m.", zh: "下午 5:30–7:00" },
+    location: { en: "Near UW campus — check Instagram or Discord for the address", zh: "UW 校园附近——具体地址请查看 Instagram 或 Discord" },
+    audience: { en: "Everyone is welcome — students, friends, and anyone curious", zh: "欢迎所有人——同学、朋友，以及任何好奇的人" },
+  },
+  {
+    id: "saturday-hiking",
+    day: { en: "Saturday mornings", zh: "周六早上" },
+    title: { en: "Saturday Morning Hike", zh: "周六早晨爬山" },
+    description: {
+      en: "🥾 We hike together on Saturday mornings. Where to? Not decided yet — and we'd love your ideas! Tell us your favorite trail on Instagram or Discord.",
+      zh: "🥾 周六早上我们会一起去爬山。去哪里？还没定——欢迎大家提建议！请在 Instagram 或 Discord 告诉我们你喜欢的路线。",
+    },
+    time: { en: "Saturday morning (exact time announced each week)", zh: "周六早上（具体时间每周公布）" },
+    location: { en: "To be decided — suggestions welcome!", zh: "待定——欢迎提议！" },
+    audience: { en: "Anyone who enjoys the outdoors and good company", zh: "任何喜欢户外和好伙伴的人" },
   },
 ];
