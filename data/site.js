@@ -21,6 +21,10 @@ export const siteData = {
     campusGroupsUrl: "https://huskylink.washington.edu/actioncenter/organization/christiansinseattle",
     churchWebsiteUrl: "https://tcots-website-preview.netlify.app",
     contactEmail: "christiansinseattle@uw.edu",
+    contactPhones: [
+      { name: "Cecilia", phone: "(773) 396-6422" },
+      { name: "Meredith", phone: "(216) 650-8420" },
+    ],
     guestbook: {
           formEmbedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeIJBaG4G2tlSHSV3T0SYY-1Or3l5L4VBGO5erxJTncVFut5w/viewform?embedded=true",
           sheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTN-sS26E23MqeK3Y3A1nsMNEedx4T-V0FZ4I6NQeA_Bch_BcDMXBs-sXsPRI5SRgTb1R1JroifX0Ug/pub?output=csv",
