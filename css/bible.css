@@ -13,7 +13,11 @@
 .bible-groups { display: grid; gap: 22px; margin-bottom: 30px; }
 .bible-group h2 { margin: 0 0 10px; font-family: Arvo, Georgia, serif; font-size: .78rem; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: #8b9777; }
 .bible-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.bible-slot { display: flex; flex-direction: column; gap: 4px; padding: 22px 12px; border-radius: 26px; background: #efe6e1; text-align: center; }
+.bible-slot { display: flex; flex-direction: column; gap: 4px; padding: 22px 12px; border-radius: 26px; background: #e8ece0; text-align: center; }
+.bible-zh .bible-slot { background: #f1e3da; }
+.bible-en h2 { color: #7f9170; }
+.bible-zh h2 { color: #b5785a; }
+.bible-note-strong { font-weight: 700; color: #4a4547; }
 .bible-slot strong { font-size: 1.1rem; letter-spacing: .02em; }
 .bible-slot span { font-size: 1rem; line-height: 1.35; }
 .bible-copy { margin: 0 auto; max-width: 560px; font-size: 1.08rem; line-height: 1.7; }
