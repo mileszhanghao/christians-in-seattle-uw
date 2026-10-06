@@ -123,28 +123,31 @@ function renderSocialPreviews() {
     link.setAttribute("aria-describedby", cardId);
     const isChinese = getLanguage() === "zh";
 
-    if (type === "discord") {
-      card.innerHTML = `
-        <img src="${siteData.socialCommunityImage}" alt="">
-        <span class="social-preview-copy">
-          <strong>Christians in Seattle UW</strong>
-          <small>${isChinese ? "活动通知、问题、经文与校园交通" : "Events, questions, Bible verses, and campus fellowship"}</small>
-          <a href="${siteData.discordChannelUrl}" target="_blank" rel="noopener noreferrer">${isChinese ? "预览 #general" : "Preview #general"} &rarr;</a>
-        </span>`;
-    } else if (type === "schedule") {
-      card.innerHTML = `
-        <img src="${siteData.scheduleImagePreview}" alt="">
-        <span class="social-preview-copy">
-          <strong>${isChinese ? "每周聚会" : "Weekly Gatherings"}</strong>
-          <small>${isChinese ? "看看我们的聚会是什么样子" : "See what our gatherings look like"}</small>
-        </span>`;
-    } else {
-      card.innerHTML = `
-        <img src="${siteData.instagramPreviewImage}" alt="">
-        <span class="social-preview-copy">
-          <strong>@${siteData.instagramUsername}</strong>
-          <small>${isChinese ? "查看最新活动、校园照片与经文分享" : "Recent events, campus photos, and Bible verse posts"}</small>
-        </span>`;
+    const text = (en, zh) => (isChinese ? zh : en);
+    const cards = {
+      discord: { image: siteData.socialCommunityImage, title: "Christians in Seattle UW", text: text("Events, questions, Bible verses, and campus fellowship", "活动通知、问题、经文与校园交通"), extra: `<a href="${siteData.discordChannelUrl}" target="_blank" rel="noopener noreferrer">${text("Preview #general", "预览 #general")} &rarr;</a>` },
+      instagram: { image: siteData.instagramPreviewImage, title: `@${siteData.instagramUsername}`, text: text("Recent events, campus photos, and Bible verse posts", "查看最新活动、校园照片与经文分享") },
+      schedule: { image: siteData.scheduleImagePreview, title: text("Weekly Gatherings", "每周聚会"), text: text("Friday family dinners, Saturday hikes, and Bible reading", "周五家庭聚会、周六爬山和读经") },
+      events: { image: siteData.eventsPreviewImage, title: text("Past Adventures", "过往活动"), text: text("Day trips, hikes, and dinners with friends", "一日游、爬山和朋友聚餐") },
+      bible: { image: siteData.biblePreviewImage, title: text("Bible Reading", "圣经阅读"), text: text("Read, ask questions, and sing together", "一起读经、提问、唱诗") },
+      church: { image: siteData.churchPreviewImage, title: text("The Church Family", "教会大家庭"), text: text("Meet the wider community we belong to", "认识我们所属的更大群体") },
+      calendar: { image: siteData.calendarPreviewImage, title: text("Never Miss a Week", "不错过每一周"), text: text("Add every gathering to your calendar", "把每次聚会加入你的日历") },
+    };
+    const c = cards[type] || cards.instagram;
+    card.innerHTML = `
+      <img data-src="${c.image}" alt="" width="88" height="88">
+      <span class="social-preview-copy">
+        <strong>${c.title}</strong>
+        <small>${c.text}</small>
+        ${c.extra || ""}
+      </span>`;
+    if (!wrapper.dataset.previewBound) {
+      wrapper.dataset.previewBound = "1";
+      const load = () => {
+        const img = card.querySelector("img[data-src]");
+        if (img) { img.src = img.dataset.src; img.removeAttribute("data-src"); }
+      };
+      ["mouseenter", "focusin", "touchstart"].forEach((name) => wrapper.addEventListener(name, load, { passive: true }));
     }
   });
 }
