@@ -45,11 +45,11 @@
   <div id="site-footer"></div>
   <script type="module">
     import { pastEvents } from "./data/events.js";
-    import { splitEvents, renderSchedule } from "./js/schedule.js";
+    import { splitEvents, renderSchedule, renderUpcoming } from "./js/schedule.js";
     import { getLanguage } from "./js/i18n.js";
     function render() {
       const groups = splitEvents();
-      renderSchedule(document.querySelector("#upcoming-events"), groups.upcoming);
+      renderUpcoming(document.querySelector("#upcoming-events"), groups.upcoming);
       const cancelledSection = document.querySelector("#cancelled-events-section");
       cancelledSection.hidden = !groups.cancelled.length;
       if (groups.cancelled.length) {
