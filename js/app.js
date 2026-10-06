@@ -135,7 +135,7 @@ function renderSocialPreviews() {
       card.innerHTML = `
         <img src="${siteData.scheduleImagePreview}" alt="">
         <span class="social-preview-copy">
-          <strong>${isChinese ? "秋季迎新活动" : "Fall Welcome Events"}</strong>
+          <strong>${isChinese ? "每周聚会" : "Weekly Gatherings"}</strong>
           <small>${isChinese ? "看看我们的聚会是什么样子" : "See what our gatherings look like"}</small>
         </span>`;
     } else {
