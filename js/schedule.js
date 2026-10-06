@@ -1,4 +1,4 @@
-import { fallOrientationEvents, weeklyEvents } from "../data/events.js";
+import { fallOrientationEvents, weeklyEvents, weeklySchedule } from "../data/events.js";
 import { siteData } from "../data/site.js";
 import { getLanguage, localized, t } from "./i18n.js";
 
@@ -208,10 +208,82 @@ export function renderWeekly(container, events = weeklyEvents) {
   container.innerHTML = events.map(weeklyCard).join("");
 }
 
+const TT_START = 9 * 60;
+const TT_END = 19 * 60 + 30;
+const TT_DAYS = [
+  { d: 2, en: "Tue", zh: "周二" },
+  { d: 3, en: "Wed", zh: "周三" },
+  { d: 4, en: "Thu", zh: "周四" },
+  { d: 5, en: "Fri", zh: "周五" },
+  { d: 6, en: "Sat", zh: "周六" },
+  { d: 0, en: "Sun", zh: "周日" },
+];
+
+function toMinutes(value) {
+  const [h, m] = value.split(":").map(Number);
+  return h * 60 + m;
+}
+
+function clock(value) {
+  const [h, m] = value.split(":").map(Number);
+  const mm = String(m).padStart(2, "0");
+  if (getLanguage() === "zh") return `${h}:${mm}`;
+  return `${h % 12 || 12}:${mm} ${h >= 12 ? "PM" : "AM"}`;
+}
+
+function slotTime(slot) {
+  return slot.timeNote ? localized(slot.timeNote) : `${clock(slot.start)}–${clock(slot.end)}`;
+}
+
+function slotInner(slot) {
+  return `<span class="tt-time">${slotTime(slot)}</span><strong>${localized(slot.title)}</strong><small>${localized(slot.place)}</small>`;
+}
+
+function timetableHtml() {
+  const rows = (TT_END - TT_START) / 30;
+  const zh = getLanguage() === "zh";
+  const head = TT_DAYS.map((day, i) => `<div class="tt-head" style="grid-column:${i + 2};grid-row:1">${zh ? day.zh : day.en}</div>`).join("");
+  const cols = TT_DAYS.map((day, i) => `<div class="tt-col" style="grid-column:${i + 2};grid-row:2 / ${rows + 2}"></div>`).join("");
+  let hours = "";
+  for (let m = TT_START; m < TT_END; m += 60) {
+    const row = (m - TT_START) / 30 + 2;
+    hours += `<div class="tt-hour" style="grid-row:${row} / span 2">${clock(`${m / 60}:00`)}</div>`;
+  }
+  const events = weeklySchedule.map((slot) => {
+    const col = TT_DAYS.findIndex((day) => day.d === slot.day) + 2;
+    const r1 = (toMinutes(slot.start) - TT_START) / 30 + 2;
+    const r2 = (toMinutes(slot.end) - TT_START) / 30 + 2;
+    return `<div class="tt-event tt-${slot.kind}" style="grid-column:${col};grid-row:${r1} / ${r2}">${slotInner(slot)}</div>`;
+  }).join("");
+  const agenda = TT_DAYS.map((day) => {
+    const items = weeklySchedule
+      .filter((slot) => slot.day === day.d)
+      .sort((a, b) => a.start.localeCompare(b.start))
+      .map((slot) => `<li class="tt-item tt-${slot.kind}">${slotInner(slot)}</li>`)
+      .join("");
+    return `<div class="tt-day"><h3>${zh ? day.zh : day.en}</h3><ul>${items}</ul></div>`;
+  }).join("");
+  return `
+    <div class="timetable" aria-hidden="true">${head}${hours}${cols}${events}</div>
+    <div class="tt-agenda">${agenda}</div>`;
+}
+
+function timetableBlock() {
+  const notes = weeklyEvents
+    .map((event) => `<li><strong>${localized(event.title)}</strong> — ${localized(event.description)}</li>`)
+    .join("");
+  return `
+    <div class="timetable-wrap">
+      ${timetableHtml()}
+      <ul class="tt-notes">${notes}</ul>
+      <p class="tt-join">${t("pages.joinNote")} <a href="contact.html">${t("nav.contact")} →</a> <a href="bible-study.html">${t("pages.bibleLink")} →</a></p>
+    </div>`;
+}
+
 export function renderUpcoming(container, upcoming = []) {
   if (!container) return;
   container.innerHTML = [
-    ...weeklyEvents.map(weeklyCard),
+    timetableBlock(),
     ...upcoming.filter((e) => e.public !== false).map((e) => eventCard(e)),
   ].join("");
 }
