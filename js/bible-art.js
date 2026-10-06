@@ -33,3 +33,4 @@ const book = `<path d="M10 44C60 30 100 34 130 52L130 118C100 102 60 100 10 112Z
 const defs = `<defs><linearGradient id="bs-lf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a7b592"/><stop offset="1" stop-color="#7d8f69"/></linearGradient><radialGradient id="bs-pt" cx=".5" cy=".7" r=".8"><stop offset="0" stop-color="#f6e2dc"/><stop offset=".6" stop-color="#fffaf5"/><stop offset="1" stop-color="#fffdf9"/></radialGradient></defs>`;
 const svg = `<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">${defs}<symbol id="art-sprig" viewBox="0 0 210 210">${sprig()}</symbol><symbol id="art-branch" viewBox="0 0 210 210">${branch()}</symbol><symbol id="art-book" viewBox="0 0 260 150">${book}</symbol></svg>`;
 document.body.insertAdjacentHTML("afterbegin", svg);
+document.querySelectorAll("[data-until]").forEach((el) => { if (Date.now() > Date.parse(`${el.dataset.until}T00:00:00-07:00`)) el.hidden = true; });
