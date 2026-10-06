@@ -262,7 +262,7 @@ export const pastEvents = [
 export const regularEvents = [
   {
     id: "weekly-bible-reading",
-    title: { en: "Weekly Bible Reading", zh: "每周圣经阅读" },
+    title: { en: "Weekly Bible Study", zh: "每周查经" },
     description: {
       en: "Read the Bible, ask questions, and explore faith with other students.",
       zh: "与其他学生一同阅读圣经、提出问题并探索信仰。",
@@ -315,10 +315,10 @@ export const weeklyEvents = [
 
 // Weekly timetable (day: 0 = Sunday ... 6 = Saturday). Times are 24-hour HH:MM.
 export const weeklySchedule = [
-  { id: "zh-reading-tue", day: 2, start: "17:30", end: "18:30", kind: "reading", title: { en: "Chinese Bible Reading", zh: "中文读经" }, place: { en: "Suzzallo Library 334", zh: "Suzzallo 图书馆 334" } },
-  { id: "en-reading-wed", day: 3, start: "16:30", end: "17:30", kind: "reading", title: { en: "English Bible Reading", zh: "英文读经" }, place: { en: "Suzzallo Library 334", zh: "Suzzallo 图书馆 334" } },
-  { id: "zh-reading-thu", day: 4, start: "12:00", end: "13:00", kind: "reading", title: { en: "Chinese Bible Reading", zh: "中文读经" }, place: { en: "Suzzallo Library 334", zh: "Suzzallo 图书馆 334" } },
-  { id: "en-reading-thu", day: 4, start: "16:30", end: "17:30", kind: "reading", title: { en: "English Bible Reading", zh: "英文读经" }, place: { en: "Suzzallo Library 334", zh: "Suzzallo 图书馆 334" } },
+  { id: "zh-reading-tue", day: 2, start: "17:30", end: "18:30", kind: "reading", title: { en: "Chinese Bible Study", zh: "中文查经" }, place: { en: "Suzzallo Library 338", zh: "Suzzallo 图书馆 338" } },
+  { id: "en-reading-wed", day: 3, start: "17:30", end: "18:30", kind: "reading", title: { en: "English Bible Study", zh: "英文查经" }, place: { en: "Suzzallo Library 334", zh: "Suzzallo 图书馆 334" } },
+  { id: "zh-reading-thu", day: 4, start: "12:00", end: "13:00", kind: "reading", title: { en: "Chinese Bible Study", zh: "中文查经" }, place: { en: "Suzzallo Library 334", zh: "Suzzallo 图书馆 334" } },
+  { id: "en-reading-thu", day: 4, start: "16:30", end: "17:30", kind: "reading", title: { en: "English Bible Study", zh: "英文查经" }, place: { en: "Suzzallo Library 334", zh: "Suzzallo 图书馆 334" } },
   { id: "friday-family", day: 5, start: "17:30", end: "19:00", kind: "fellowship", title: { en: "Family Gathering", zh: "家庭聚会" }, place: { en: "Near campus", zh: "校园附近" } },
   { id: "saturday-hike", day: 6, start: "09:00", end: "12:00", kind: "hike", title: { en: "Morning Hike", zh: "早晨爬山" }, timeNote: { en: "Morning", zh: "早上" }, place: { en: "Location TBD — suggest a trail!", zh: "地点待定——欢迎提议！" } },
   { id: "sunday-gathering", day: 0, start: "11:00", end: "13:00", kind: "worship", title: { en: "Sunday Gathering", zh: "主日聚会" }, place: { en: "See Instagram / Discord", zh: "见 Instagram / Discord" } },
