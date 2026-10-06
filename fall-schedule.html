@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fall Schedule | Christians in Seattle at UW</title>
-  <meta name="description" content="Fall Quarter 2026 welcome and orientation schedule for Christians in Seattle at UW.">
+  <meta name="description" content="Fall Quarter 2026 weekly schedule for Christians in Seattle at UW.">
   <meta property="og:title" content="Fall Schedule | Christians in Seattle at UW">
-  <meta property="og:description" content="September 25 through October 4, 2026 at the University of Washington.">
+  <meta property="og:description" content="Weekly Bible reading, Friday family gathering, and Saturday hiking at the University of Washington.">
   <meta property="og:type" content="website">
   <link rel="icon" href="images/branding/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/site.css">
@@ -39,8 +39,13 @@
   </main>
   <div id="site-footer"></div>
   <script type="module">
-    import { bindSchedule } from "./js/schedule.js";
-    bindSchedule(document.querySelector("#fall-schedule-list"));
+    import { fallOrientationEvents } from "./data/events.js";
+    import { splitEvents, renderUpcoming } from "./js/schedule.js";
+    function render() {
+      renderUpcoming(document.querySelector("#fall-schedule-list"), splitEvents(fallOrientationEvents).upcoming);
+    }
+    render();
+    window.addEventListener("languagechange", render);
   </script>
 </body>
 </html>
