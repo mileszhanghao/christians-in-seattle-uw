@@ -283,7 +283,7 @@ function timetableBlock() {
         <h3>${t("pages.joinTitle")}</h3>
         <p>${t("pages.joinBody1")}</p>
         <p>${t("pages.joinBody2")}</p>
-        <p class="tt-join-links"><a href="index.html#interest">${t("pages.joinInterest")} →</a><a href="contact.html">${t("nav.contact")} →</a><a href="bible-study.html">${t("pages.bibleLink")} →</a></p>
+        <p class="tt-join-links"><a href="index.html#interest">${t("pages.joinInterest")} →</a><a href="contact.html">${t("nav.contact")} →</a><a href="bible-study.html">${t("pages.bibleLink")} →</a><a href="calendar/fall-2026-orientation.ics" download>${t("pages.icsDownload")}</a></p>
       </div>
     </div>`;
 }
