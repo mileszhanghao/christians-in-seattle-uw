@@ -158,10 +158,10 @@
   <div id="site-footer"></div>
   <script type="module">
     import { fallOrientationEvents } from "./data/events.js";
-    import { splitEvents, renderSchedule } from "./js/schedule.js";
+    import { splitEvents, renderUpcoming } from "./js/schedule.js";
     function renderHomeSchedule() {
       const groups = splitEvents(fallOrientationEvents);
-      renderSchedule(document.querySelector("#featured-schedule"), groups.upcoming);
+      renderUpcoming(document.querySelector("#featured-schedule"), groups.upcoming);
     }
     renderHomeSchedule();
     window.addEventListener("languagechange", renderHomeSchedule);
