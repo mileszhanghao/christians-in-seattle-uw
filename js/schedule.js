@@ -103,7 +103,7 @@ function googleCalendarUrl(event) {
     ctz: timezone,
     details: bilingualDescription(event),
     location: locationLabel(event),
-    sprop: `website:https://${siteData.primaryDomain}/fall-schedule.html`,
+    sprop: `website:https://${siteData.primaryDomain}/events.html`,
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
