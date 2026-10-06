@@ -80,6 +80,20 @@ export const fallOrientationEvents = [
       en: "🐾 First-week jitters? We've been there. Come meet other students, grab a snack, and start building a community that feels like home at UW.",
       zh: "🐾 开学第一周有点紧张？我们都经历过。来认识新朋友、吃点小零食，在 UW 找到一个像家一样的社群。",
     },
+    images: [
+      {
+        src: "images/events/2026-09-new-huskies-welcoming/35cf52c859d4b01a8728c9762f22c848.jpg",
+        alt: { en: "Students gathered in the room for New Huskies Welcoming", zh: "同学们聚在一起参加新哈士奇欢迎活动" },
+      },
+      {
+        src: "images/events/2026-09-new-huskies-welcoming/dbdf218dba6d9204b583f755fea13b7a.jpg",
+        alt: { en: "Playing guitar and cello outside the building", zh: "在楼外弹吉他和大提琴" },
+      },
+      {
+        src: "images/events/2026-09-new-huskies-welcoming/9d9c1b9111d72f3865d6187d5febf907.jpg",
+        alt: { en: "Husky and friend plush toys", zh: "哈士奇和朋友的玩偶" },
+      },
+    ],
     date: "2026-09-30",
     startTime: "18:00",
     endTime: "19:00",
@@ -103,6 +117,20 @@ export const fallOrientationEvents = [
       en: "🍂 New quarter, new opportunities! We're kicking off fall with games, food, and good company — connect with others before the syllabus-week chaos hits.",
       zh: "🍂 新学期，新机会！我们用游戏、美食和好伙伴开启这个秋季学期——在忙碌的开学周之前先认识大家。",
     },
+    images: [
+      {
+        src: "images/events/2026-10-fall-quarter-kickoff/1c07de88dae1ac05cd791527d21343d9.jpg",
+        alt: { en: "Our welcome tent set up on campus", zh: "校园里的迎新帐篷" },
+      },
+      {
+        src: "images/events/2026-10-fall-quarter-kickoff/9cc30f84cafef6a964516f3637d91088.jpg",
+        alt: { en: "Singing together with guitar at the kick-off", zh: "迎新活动中弹着吉他一起唱诗" },
+      },
+      {
+        src: "images/events/2026-10-fall-quarter-kickoff/dd82b879a3ad5cc456aa2aabde49dc05.jpg",
+        alt: { en: "Welcome table in the lobby", zh: "大厅里的迎新桌" },
+      },
+    ],
     date: "2026-10-02",
     startTime: "18:30",
     endTime: "19:30",
@@ -126,6 +154,20 @@ export const fallOrientationEvents = [
       en: "🙏 Another Sunday, another chance to slow down and connect — with God and with each other. Come for worship, stay for the conversation.",
       zh: "🙏 又一个主日，又一次慢下来彼此连接的机会——与神，也与彼此。为敬拜而来，留下来一起聊聊天。",
     },
+    images: [
+      {
+        src: "images/events/2026-10-sunday-worship/a93362bf0b61e6b5d104970b198494a0.jpg",
+        alt: { en: "Sharing a meal around the table", zh: "围着餐桌一起吃饭" },
+      },
+      {
+        src: "images/events/2026-10-sunday-worship/b4e5e5010e2945d2ff778f951c2ff631.jpg",
+        alt: { en: "Gathered in the room for worship", zh: "大家在教室里一起敬拜" },
+      },
+      {
+        src: "images/events/2026-10-sunday-worship/2dc73174e57bb77a0307ffb678167575.jpg",
+        alt: { en: "Reading the lyrics on screen together", zh: "一起看着屏幕上的诗歌" },
+      },
+    ],
     date: "2026-10-04",
     startTime: "16:00",
     endTime: "17:00",
