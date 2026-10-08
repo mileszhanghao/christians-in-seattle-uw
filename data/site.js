@@ -18,7 +18,7 @@ export const siteData = {
     calendarPreviewImage: "images/events/2026-03-bay-area-gospel-meeting/023a5452a4712aafda0d7e517d0957b5.jpg",
     discordInviteUrl: "https://discord.gg/KaU6RJ3ZWE",
     discordChannelUrl: "https://discord.com/channels/1416897268094865440/1416897268996378818",
-    campusGroupsUrl: "https://huskylink.washington.edu/actioncenter/organization/christiansinseattle",
+    campusGroupsUrl: "https://huskylink.washington.edu/club_signup?group_type=&search=Christians&category_tags=&order=name_asc",
     churchWebsiteUrl: "https://tcots-website-preview.netlify.app",
     contactEmail: "christiansinseattle@uw.edu",
     contactPhones: [
