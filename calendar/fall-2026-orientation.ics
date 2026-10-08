@@ -25,8 +25,8 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:reading-zh-tue@christiansinseattle.org
 DTSTAMP:20261005T180000Z
-DTSTART;TZID=America/Los_Angeles:20261006T173000
-DTEND;TZID=America/Los_Angeles:20261006T183000
+DTSTART;TZID=America/Los_Angeles:20261006T180000
+DTEND;TZID=America/Los_Angeles:20261006T190000
 RRULE:FREQ=WEEKLY;COUNT=10
 SUMMARY:Chinese Bible Study / 中文查经
 DESCRIPTION:Weekly Chinese Bible study. / 每周中文查经。
@@ -47,8 +47,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:reading-zh-thu@christiansinseattle.org
 DTSTAMP:20261005T180000Z
-DTSTART;TZID=America/Los_Angeles:20261008T120000
-DTEND;TZID=America/Los_Angeles:20261008T130000
+DTSTART;TZID=America/Los_Angeles:20261008T123000
+DTEND;TZID=America/Los_Angeles:20261008T133000
 RRULE:FREQ=WEEKLY;COUNT=10
 SUMMARY:Chinese Bible Study / 中文查经
 DESCRIPTION:Weekly Chinese Bible study. / 每周中文查经。
